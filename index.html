@@ -396,7 +396,7 @@
             <span class="px-1.5 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-amber-200 text-[10px] font-semibold">
               <i class="fa-solid fa-flask mr-1" aria-hidden="true"></i>Provisional Demo Setting
             </span>
-            <span id="panel-db-mapping-badge" class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px] border border-slate-700">
+            <span id="panel-db-mapping-badge" hidden class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px] border border-slate-700">
               DB Mapping: Unassigned
             </span>
           </div>
@@ -416,28 +416,6 @@
       </div>
 
       <div id="panel-scroll-container" role="region" aria-label="Incident evidence and response details" tabindex="0" class="flex-1 min-h-0 overflow-y-auto overscroll-contain p-3.5 space-y-3.5 text-xs">
-      <section id="local-patrol-panel" class="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 space-y-1.5 text-[11px]" aria-label="Synthetic incident and fictional patrol response">
-        <div class="flex items-center justify-between gap-2"><strong class="text-govNavy">Active synthetic incident · fictional patrol</strong><span id="local-patrol-clock" class="font-mono text-govSlate">T+22</span></div>
-        <p id="local-incident-what" class="text-slate-800"></p>
-        <p id="local-incident-where-when" class="text-slate-700"></p>
-        <p class="text-amber-800 font-medium">Synthetic incident evidence · dated public context is separate · fictional patrol; no real dispatch.</p>
-        <p id="local-patrol-status" class="font-semibold text-govNavy" aria-live="polite"></p>
-        <p id="local-playback-status" class="text-govSlate font-medium" aria-live="polite">Playback paused · 1×</p>
-        <p id="local-patrol-outcome" class="text-slate-700" aria-live="polite"></p>
-        <details id="local-patrol-details" class="border-t border-blue-200 pt-1 text-slate-700"><summary class="cursor-pointer font-semibold text-govNavy">Why it matters, evidence, route and map legend</summary>
-          <p id="local-incident-why" class="mt-1"></p>
-          <p id="local-incident-evidence" class="mt-1"></p>
-          <p id="local-route-note" class="mt-1"></p>
-          <p>Maximum 4 km geodesic distance from each published home station applies to every patrol, response and return route. Illustrative simulation areas — not official Garda boundaries. Areas may overlap; outside all circles is uncovered.</p>
-          <p>Returning units cannot take another assignment until back on patrol. Break and shift rules are synthetic assumptions. Restart resets all fictional patrols and review decisions in this tab.</p>
-          <div class="flex flex-wrap gap-x-2 gap-y-1 mt-1 text-[10px]" aria-label="Map patrol legend"><span>● Amber: synthetic incident</span><span>◆ Public station: simulated home</span><span>■ Navy: available patrol</span><span>■ Violet: assigned</span><span>■ Blue: en route / returning</span><span>■ Green: on scene</span><span>■ Grey: unavailable</span></div>
-        </details>
-        <div class="flex flex-wrap gap-1.5">
-          <button id="btn-local-next-minute" type="button" onclick="observatory.advanceLocalPatrolMinute()" class="rounded border border-govBorder bg-white px-2 py-1 font-semibold">Next minute</button>
-          <button id="btn-local-follow-up" type="button" onclick="observatory.simulateLocalFollowUp()" class="rounded border border-govBorder bg-white px-2 py-1 font-semibold">Simulate next observation</button>
-        </div>
-      </section>
-
       <section id="risk-event-panel" class="rounded-lg border border-amber-300 bg-amber-50/70 p-3 space-y-2 text-[11px]" aria-label="Synthetic risk-event intelligence">
         <div class="flex items-center justify-between gap-2"><h3 class="font-bold text-govNavy">Risk-event intelligence · fictional replay</h3><span id="risk-event-clock" class="font-mono text-govSlate">T+00</span></div>
         <p id="risk-exercise-location" class="font-semibold text-govNavy"></p>
@@ -482,12 +460,10 @@
       </section>
 
         <!-- Provisional Notice Strip -->
-        <div class="bg-slate-50 border border-govBorder rounded-lg px-3 py-2 text-[11px] text-slate-600 leading-relaxed flex items-start space-x-2">
-          <i class="fa-solid fa-circle-info text-govSlate mt-0.5" aria-hidden="true"></i>
-          <div>
-            <strong class="text-govNavy">Provisional spatial cluster zone — Approximate corridor overlay.</strong> <span id="panel-zone-scope-note">Shaded circle/oblong and 3-point corridor line are approximate illustrative overlays along this road corridor (not survey-grade or 1:1 road-snapped GIS boundaries) and do not claim a measured real-world problem.</span>
-          </div>
-        </div>
+        <details class="bg-slate-50 border border-govBorder rounded-lg px-3 py-2 text-[11px] text-slate-600 leading-relaxed">
+          <summary class="cursor-pointer font-semibold text-govNavy">Approximate demo area · not an official boundary</summary>
+          <p id="panel-zone-scope-note" class="mt-1">Shaded circle/oblong and 3-point corridor line are approximate illustrative overlays along this road corridor (not survey-grade or 1:1 road-snapped GIS boundaries) and do not claim a measured real-world problem.</p>
+        </details>
 
         <!-- SECTION 1: EVIDENCE & CONTEXT BREAKDOWN (GREEN VS AMBER) -->
         <div id="sec-evidence" class="space-y-3">
@@ -533,12 +509,36 @@
             </div>
           </div>
 
-          <div class="bg-emerald-50/60 border border-emerald-300 rounded-lg p-3 text-[11px]">
-            <h3 class="font-bold text-govNavy uppercase tracking-wider">Dated Public Context — Separate From Replay</h3>
+          <details class="bg-emerald-50/60 border border-emerald-300 rounded-lg p-3 text-[11px]">
+            <summary class="cursor-pointer font-bold text-govNavy uppercase tracking-wider">Dated Public Context — Sources &amp; Dates</summary>
             <div id="panel-public-context" class="mt-1.5 text-slate-700" aria-live="polite">Checking local public-data snapshot…</div>
-          </div>
+          </details>
 
-          <div class="bg-white border border-govBorder rounded-lg p-3 space-y-2 text-[11px]" aria-label="Synthetic scenario replay">
+          <p id="forecast-status" class="bg-slate-50 border border-govBorder rounded-lg p-2 text-[11px] text-slate-600" aria-live="polite">TimesFM 3.0 forecast unavailable — model approval and actual inference pending.</p>
+
+          <section id="local-patrol-panel" class="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 space-y-1.5 text-[11px]" aria-label="Fictional patrol response">
+            <span id="local-patrol-clock" hidden>T+22</span>
+            <p id="local-incident-what" hidden></p>
+            <p id="local-incident-where-when" hidden></p>
+            <p id="local-patrol-status" class="font-semibold text-govNavy" aria-live="polite"></p>
+            <p id="local-playback-status" class="text-govSlate font-medium" aria-live="polite">Playback paused · 1×</p>
+            <p id="local-patrol-outcome" class="text-slate-700" aria-live="polite"></p>
+            <details id="local-patrol-details" class="border-t border-blue-200 pt-1 text-slate-700"><summary class="cursor-pointer font-semibold text-govNavy">Patrol route and limitations</summary>
+              <p id="local-incident-why" class="mt-1"></p>
+              <p id="local-incident-evidence" class="mt-1"></p>
+              <p id="local-route-note" class="mt-1"></p>
+              <p>Maximum 4 km geodesic distance from each published home station applies to every patrol, response and return route. Illustrative simulation areas — not official Garda boundaries. Areas may overlap; outside all circles is uncovered.</p>
+              <p>Returning units cannot take another assignment until back on patrol. Break and shift rules are synthetic assumptions. Restart resets all fictional patrols and review decisions in this tab.</p>
+              <div class="flex flex-wrap gap-x-2 gap-y-1 mt-1 text-[10px]" aria-label="Map patrol legend"><span>● Amber: synthetic incident</span><span>◆ Public station: simulated home</span><span>■ Navy: available patrol</span><span>■ Violet: assigned</span><span>■ Blue: en route / returning</span><span>■ Green: on scene</span><span>■ Grey: unavailable</span></div>
+            </details>
+            <div class="flex flex-wrap gap-1.5">
+              <button id="btn-local-next-minute" type="button" onclick="observatory.advanceLocalPatrolMinute()" class="rounded border border-govBorder bg-white px-2 py-1 font-semibold">Next minute</button>
+              <button id="btn-local-follow-up" type="button" onclick="observatory.simulateLocalFollowUp()" class="rounded border border-govBorder bg-white px-2 py-1 font-semibold">Simulate next observation</button>
+              <button id="btn-scenario-restart" type="button" onclick="observatory.restartReplay()" class="rounded border border-govBorder bg-white px-2 py-1 font-semibold">Restart scenario</button>
+            </div>
+          </section>
+
+          <div hidden class="bg-white border border-govBorder rounded-lg p-3 space-y-2 text-[11px]" aria-label="Synthetic scenario replay">
             <div class="flex flex-wrap items-center justify-between gap-2">
               <h3 class="font-bold text-govNavy uppercase tracking-wider">Synthetic Event Replay</h3>
               <span id="replay-clock" class="font-mono text-govSlate">00 / 36 min</span>
@@ -552,7 +552,6 @@
             <p id="replay-status" class="text-slate-600" aria-live="polite">Ready to replay synthetic events. No live feeds are used.</p>
             <div class="h-[110px] w-full"><canvas id="replay-chart" aria-label="Synthetic event values over replay time"></canvas></div>
             <p id="replay-alert-explanation" class="bg-slate-50 border border-govBorder rounded p-2 text-slate-700" aria-live="polite">No prototype alert yet.</p>
-            <p id="forecast-status" class="bg-slate-50 border border-govBorder rounded p-2 text-slate-600" aria-live="polite">TimesFM 3.0 forecast unavailable — model approval and actual inference pending.</p>
             <ol id="replay-timeline" class="max-h-36 overflow-y-auto space-y-1 list-none" aria-label="Incoming synthetic events"></ol>
             <div class="border-t border-govBorder pt-2 space-y-1.5" aria-label="Persisted evaluation status">
               <p id="evaluation-api-status" class="font-semibold text-govSlate" aria-live="polite">Checking isolated evaluation API configuration…</p>
@@ -566,7 +565,7 @@
           </div>
 
           <!-- Expandable Uncertainty, Peer Baseline & Safeguards Accordion -->
-          <details id="panel-uncertainty-accordion" class="bg-slate-50 border border-govBorder rounded-lg text-[11px] group">
+          <details id="panel-uncertainty-accordion" hidden class="bg-slate-50 border border-govBorder rounded-lg text-[11px] group">
             <summary class="px-3 py-2 font-semibold text-govNavy cursor-pointer flex items-center justify-between select-none">
               <span class="flex items-center">
                 <i class="fa-solid fa-scale-balanced text-govSlate mr-1.5" aria-hidden="true"></i>
