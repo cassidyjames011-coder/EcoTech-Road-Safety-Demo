@@ -157,30 +157,44 @@
     #weather-timeline:not(.expanded) #weather-data,
     #weather-timeline:not(.expanded) #weather-provenance { display: none; }
     @media (max-width: 767px) {
+      header { gap: 6px; }
+      #btn-open-source-status, #btn-open-session-summary { min-height: 36px; }
       nav:has(#scenario-nav-details) { position: absolute; top: 8px; left: 8px; padding: 0; border: 0; background: transparent; }
       nav:has(#scenario-nav-details[open]) { z-index: 35; }
-      #floating-kpi-strip { max-height: min(55dvh, 460px); }
+      #floating-kpi-strip { max-height: min(65dvh, 500px); }
+      [data-scenario-card] { padding-top: 5px; padding-bottom: 5px; gap: 0; }
+      [data-scenario-card] > div:nth-child(2) { margin-top: 1px; }
+      [data-scenario-card] > div:nth-child(3) { margin-top: 2px; padding-top: 2px; }
       #map-response-controls { top: 64px; }
+      #map-response-controls button, #map-response-controls summary { min-height: 32px; display: inline-flex; align-items: center; }
       #unit-details-sheet { top: auto; bottom: 0; left: 0; right: 0; width: 100%;
         max-height: min(48dvh, 430px); border-radius: 16px 16px 0 0; }
-      .fictional-unit-pin { width: 25px; height: 25px; padding: 0; border-radius: 50%; font-size: 0; display: grid; place-items: center; }
+      .fictional-unit-pin { width: 30px; height: 30px; padding: 0; border-radius: 50%; font-size: 0; display: grid; place-items: center; }
       .fictional-unit-pin i { display: none; }
-      .fictional-unit-pin::after { content: attr(data-unit-short); font-size: 8px; }
+      .fictional-unit-pin::after { content: attr(data-unit-short); font-size: 9px; }
       .fictional-depot-pin { width: 18px; height: 18px; font-size: 9px; }
       #inspection-panel { height: 50%; }
+      #panel-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; overflow: hidden; }
+      #inspection-panel.panel-expanded { position: fixed; inset: 0; z-index: 70; height: 100dvh !important; max-height: 100dvh; border-radius: 0; }
+      #panel-expand-control { display: inline-flex; }
+      #panel-action-footer { padding: 6px 8px; }
+      body:has(#local-mode-banner:not(.hidden)) #panel-action-footer > div:last-child { display: none; }
+      #panel-action-footer button, #panel-action-footer select { min-height: 32px; }
+      #area-boundary-disclosure { left: 8px; bottom: 38px; max-width: calc(100% - 16px); }
       #weather-timeline { height: 58px; max-height: 58px; overflow: hidden; }
       #weather-timeline.expanded { height: 175px; max-height: 175px; overflow-y: auto; }
       #public-map-source-status { display: none; }
     }
+    @media (max-width: 420px) { #btn-open-source-status .mobile-source-label { display: none; } }
     @media (max-width: 767px) and (min-height: 701px) {
-      main:has(#inspection-panel:not(.hidden)) #dublin-map-wrapper { flex: 0 0 min(32dvh, 300px); }
+      main:has(#inspection-panel:not(.hidden)) #dublin-map-wrapper { flex: 0 0 min(27dvh, 250px); }
       main:has(#inspection-panel:not(.hidden)) #inspection-panel { flex: 1 1 0; height: auto; min-height: 0; }
     }
     @media (max-width: 767px) and (max-height: 700px) {
-      body.overflow-hidden { height: auto; min-height: 100dvh; overflow-y: auto; }
-      main.overflow-hidden { flex: none; overflow: visible; }
-      #dublin-map-wrapper { flex: none; height: 220px; }
-      #inspection-panel { flex: none; height: min(420px, calc(100dvh - 20px)); min-height: 260px; }
+      body.overflow-hidden:has(#inspection-panel:not(.hidden)) { height: auto; min-height: 100dvh; overflow-y: auto; }
+      main.overflow-hidden:has(#inspection-panel:not(.hidden)) { flex: none; overflow: visible; }
+      main:has(#inspection-panel:not(.hidden)) #dublin-map-wrapper { flex: none; height: 310px; }
+      #inspection-panel:not(.hidden) { flex: none; height: min(460px, calc(100dvh - 20px)); min-height: 260px; }
     }
 
     .leaflet-tooltip.dublin-scenario-tooltip {
@@ -236,7 +250,7 @@
         <i class="fa-solid fa-route text-sm" aria-hidden="true"></i>
       </div>
       <div class="flex items-center space-x-2 truncate">
-        <span class="font-semibold tracking-tight text-sm sm:text-base truncate">Dublin Road-Risk Evaluation Observatory</span>
+        <span class="font-semibold tracking-tight text-sm sm:text-base truncate"><span class="sm:hidden">Dublin Demo</span><span class="hidden sm:inline">Dublin Road-Risk Evaluation Observatory</span></span>
         <span class="hidden md:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-amber-500/20 text-amber-200 border border-amber-400/30">
           <i class="fa-solid fa-flask mr-1 text-[10px]" aria-hidden="true"></i>Public Demonstration Sandbox
         </span>
@@ -270,17 +284,17 @@
       </div>
 
       <!-- Source Status & Methodology Button -->
-      <button id="btn-open-source-status" type="button" onclick="observatory.openLaunchModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600/80 text-slate-100 font-medium transition flex items-center space-x-1.5" title="Inspect source connection statuses and methodology">
+      <button id="btn-open-source-status" type="button" onclick="observatory.openLaunchModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600/80 text-slate-100 font-medium transition flex items-center space-x-1.5" title="Inspect source connection statuses and methodology" aria-label="Source status and methodology">
         <span id="header-map-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
         <i class="fa-solid fa-database text-slate-300 text-[11px]" aria-hidden="true"></i>
         <span class="hidden sm:inline">Source Status &amp; Methodology</span>
-        <span class="sm:hidden">Sources</span>
+        <span class="sm:hidden mobile-source-label">Sources</span>
       </button>
 
       <!-- Session Summary Button -->
       <button id="btn-open-session-summary" type="button" onclick="observatory.openSessionModal()" class="px-2.5 py-1.5 rounded-lg bg-govSlate hover:bg-blue-700 border border-blue-400/30 text-white font-semibold transition flex items-center space-x-1.5" title="View your private session review decisions">
         <i class="fa-solid fa-clipboard-check text-[11px]" aria-hidden="true"></i>
-        <span>Session Summary</span>
+        <span class="sm:hidden">Reviews</span><span class="hidden sm:inline">Session Summary</span>
         <span id="header-session-count" class="px-1.5 py-0.2 bg-govNavy/90 rounded text-[11px] font-mono">0/4</span>
       </button>
     </div>
@@ -325,8 +339,8 @@
           <i class="fa-solid fa-flask mr-1 text-[10px]" aria-hidden="true"></i>Synthetic Scenario Input (Approximate Corridor Zone)
         </span>
       </div>
-      <div class="sm:hidden absolute bottom-2 left-2 z-20 bg-white/90 border border-govBorder rounded px-2 py-1 text-[9px] text-govNavy shadow-sm" aria-label="Map symbol legend">Amber: synthetic incident · ◇ public station · numbered car: fictional · violet: approximate area</div>
-      <div id="area-boundary-disclosure" class="absolute bottom-12 left-3 z-20 bg-white/90 border border-violet-300 rounded px-2 py-1 text-[9px] text-govNavy shadow-sm max-w-[290px]">Approximate simulation areas — not official Garda jurisdictions. Blank areas are uncovered.</div>
+      <div class="sm:hidden absolute bottom-2 left-2 z-20 bg-white/90 border border-govBorder rounded px-2 py-1 text-[10px] text-govNavy shadow-sm" aria-label="Map symbol legend">● Synthetic incident · ◇ Station · Numbered fictional car</div>
+      <div id="area-boundary-disclosure" class="absolute bottom-12 left-3 z-20 bg-white/90 border border-violet-300 rounded px-2 py-1 text-[9px] text-govNavy shadow-sm max-w-[290px]"><span class="sm:hidden">Approx. areas · not Garda boundaries</span><span class="hidden sm:inline">Approximate simulation areas — not official Garda jurisdictions. Blank areas are uncovered.</span></div>
 
       <!-- Tile Error Banner (Hidden unless OpenStreetMap tile provider fails) -->
       <div id="map-tile-error-banner" role="alert" class="hidden absolute top-20 left-4 z-20 bg-provRedBg border-2 border-provRed text-provRed rounded-lg px-3.5 py-2.5 shadow-lg text-xs max-w-sm">
@@ -339,7 +353,7 @@
       <div id="map-response-controls" class="absolute z-20 top-2 right-2 md:top-3 md:right-3 bg-white/95 border border-govBorder rounded-lg shadow-md p-1.5 text-[10px] text-govNavy max-w-[calc(100%-16px)]" aria-label="Map display controls">
         <div class="flex flex-wrap items-center gap-1">
           <button id="btn-fit-dublin" type="button" onclick="observatory.fitDublin()" class="rounded bg-govNavy text-white px-2 py-1 font-semibold">Fit Dublin</button>
-          <button id="btn-open-risk-events" type="button" onclick="observatory.openRiskEvents()" class="rounded border border-amber-500 bg-amber-50 px-2 py-1 font-semibold text-amber-900">Risk events · synthetic</button>
+          <button id="btn-open-risk-events" type="button" onclick="observatory.openRiskEvents()" class="rounded border border-amber-500 bg-amber-50 px-2 py-1 font-semibold text-amber-900" aria-label="Synthetic risk events"><span class="sm:hidden">Risk events</span><span class="hidden sm:inline">Risk events · synthetic</span></button>
           <button id="btn-follow-unit" type="button" onclick="observatory.toggleFollowUnit()" aria-pressed="false" disabled class="rounded border border-govBorder px-2 py-1 font-semibold disabled:opacity-50">Follow unit</button>
           <details id="map-layer-details" class="relative"><summary class="cursor-pointer rounded border border-govBorder px-2 py-1 font-semibold">Layers</summary>
             <fieldset class="absolute top-full right-0 mt-1 min-w-[165px] bg-white border border-govBorder rounded-lg p-2 shadow-lg space-y-1" aria-label="Map layers">
@@ -393,7 +407,7 @@
         <div class="space-y-1 min-w-0">
           <div class="flex flex-wrap items-center gap-1.5">
             <span id="panel-demo-id" class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-600 font-mono text-[11px] font-bold text-amber-300">DEMO-SCEN-01</span>
-            <span class="px-1.5 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-amber-200 text-[10px] font-semibold">
+            <span class="hidden sm:inline-flex px-1.5 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-amber-200 text-[10px] font-semibold">
               <i class="fa-solid fa-flask mr-1" aria-hidden="true"></i>Provisional Demo Setting
             </span>
             <span id="panel-db-mapping-badge" hidden class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px] border border-slate-700">
@@ -403,9 +417,12 @@
           <h2 id="panel-title" class="text-sm sm:text-base font-bold leading-snug truncate">N11 Cabinteely Vicinity — Speeding</h2>
         </div>
 
-        <button id="btn-close-inspection-panel" type="button" onclick="observatory.closeInspectionPanel()" class="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition flex-shrink-0" title="Close inspection panel and return to Dublin overview" aria-label="Close inspection panel">
-          <i class="fa-solid fa-xmark text-base" aria-hidden="true"></i>
-        </button>
+        <div class="flex items-center gap-1 flex-shrink-0">
+          <button id="panel-expand-control" type="button" onclick="observatory.togglePanelExpand()" aria-expanded="false" aria-label="Expand evidence panel" class="hidden items-center gap-1 text-slate-100 hover:text-white px-2 py-1 rounded-lg hover:bg-slate-800 transition text-xs font-semibold"><i class="fa-solid fa-expand" aria-hidden="true"></i><span>Expand</span></button>
+          <button id="btn-close-inspection-panel" type="button" onclick="observatory.closeInspectionPanel()" class="text-slate-300 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition" title="Close inspection panel and return to Dublin overview" aria-label="Close inspection panel">
+            <i class="fa-solid fa-xmark text-base" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Mobile Quick-Jump Section Pills -->
@@ -1143,9 +1160,10 @@
       const panelOpen = !document.getElementById('inspection-panel')?.classList.contains('hidden');
       const mapTop = state.map.getContainer().getBoundingClientRect().top;
       const navBottom = document.querySelector('#scenario-nav-details > summary')?.getBoundingClientRect().bottom ?? mapTop;
-      const topPadding = Math.max(35, Math.ceil(navBottom - mapTop) + 18);
+      const controlsBottom = document.getElementById('map-response-controls')?.getBoundingClientRect().bottom ?? mapTop;
+      const topPadding = Math.max(35, Math.ceil(Math.max(navBottom, controlsBottom) - mapTop) + 12);
       state.map.fitBounds(L.latLngBounds(points), {
-        paddingTopLeft: [mapLeftInset(), topPadding], paddingBottomRight: window.innerWidth >= 768 && panelOpen ? [490, 65] : [25, 65],
+        paddingTopLeft: [mapLeftInset(), topPadding], paddingBottomRight: window.innerWidth >= 768 && panelOpen ? [490, 65] : [window.innerWidth < 768 ? 42 : 25, 65],
         maxZoom: 11, animate: false,
       });
     }
@@ -1739,8 +1757,8 @@
         state.mapResizeObserver.observe(container);
       }
 
-      L.control.zoom({ position: 'bottomright' }).addTo(state.map);
       L.control.attribution({ position: 'bottomright', prefix: 'Leaflet' }).addTo(state.map);
+      L.control.zoom({ position: 'bottomright' }).addTo(state.map);
 
       const panel = document.getElementById('inspection-panel');
       if (panel) {
@@ -2106,6 +2124,9 @@
 
       if (panel && !options.keepOverview) panel.classList.remove('hidden');
       if (openingPanel) document.getElementById('panel-scroll-container').scrollTop = 0;
+      if (openingPanel && !options.keepOverview && window.innerWidth < 768 && window.innerHeight <= 700 && !panel.classList.contains('panel-expanded')) {
+        togglePanelExpand();
+      }
 
       document.getElementById('panel-demo-id').textContent = scen.id;
       document.getElementById('panel-title').textContent = scen.title;
@@ -2163,9 +2184,10 @@
           const isDesktop = window.innerWidth >= 768;
           if (state.localPatrol && !state.evaluationClient) {
             const unit = localPatrolView(state.localPatrol.scenarios[scen.id], scen, state.localRoutes);
+            const mobileTopPadding = Math.min(100, Math.round(state.map.getSize().y * 0.35));
             state.map.fitBounds(L.latLngBounds([unit.origin, unit.target]), {
-              paddingTopLeft: isDesktop ? [mapLeftInset(), 100] : [10, 6],
-              paddingBottomRight: isDesktop ? [490, 100] : [10, 6],
+              paddingTopLeft: isDesktop ? [mapLeftInset(), 100] : [16, mobileTopPadding],
+              paddingBottomRight: isDesktop ? [490, 100] : [16, 40],
               maxZoom: 13, animate: false,
             });
           } else if (isDesktop) {
@@ -2662,13 +2684,32 @@
       showToast(`${scenId} ${state.evaluationClient ? 'review persisted' : 'marked in non-persisted local preview'} as "${decisionType}".`, 'success');
     }
 
+    function togglePanelExpand() {
+      const panel = document.getElementById('inspection-panel');
+      const button = document.getElementById('panel-expand-control');
+      if (!panel || panel.classList.contains('hidden') || !button) return;
+      const expanded = panel.classList.toggle('panel-expanded');
+      button.setAttribute('aria-expanded', String(expanded));
+      button.setAttribute('aria-label', expanded ? 'Show map and evidence panel' : 'Expand evidence panel');
+      button.querySelector('span').textContent = expanded ? 'Show map' : 'Expand';
+      button.querySelector('i').className = `fa-solid fa-${expanded ? 'compress' : 'expand'}`;
+      if (!expanded) requestAnimationFrame(() => state.map?.invalidateSize());
+    }
+
     function closeInspectionPanel() {
       if (!state.localPatrol) pauseReplay();
       if (state.suite && state.session) {
         state.session = closeObservatoryScenario(state.session, state.suite);
       }
       const panel = document.getElementById('inspection-panel');
-      if (panel) { panel.classList.add('hidden'); panel.classList.remove('risk-exercise-mode'); }
+      if (panel) { panel.classList.add('hidden'); panel.classList.remove('risk-exercise-mode', 'panel-expanded'); }
+      const expandControl = document.getElementById('panel-expand-control');
+      if (expandControl) {
+        expandControl.setAttribute('aria-expanded', 'false');
+        expandControl.setAttribute('aria-label', 'Expand evidence panel');
+        expandControl.querySelector('span').textContent = 'Expand';
+        expandControl.querySelector('i').className = 'fa-solid fa-expand';
+      }
       pauseRiskReplay();
       renderRiskMap();
       renderLocalPatrolMap();
@@ -3418,6 +3459,9 @@
         ts.textContent = `4 synthetic scenarios validated (${new Date().toTimeString().slice(0, 8)})`;
       }
       window.__PUBLIC_DEMO_READY__ = true;
+      if (state.map && document.getElementById('inspection-panel')?.classList.contains('hidden')) {
+        requestAnimationFrame(() => requestAnimationFrame(() => fitDublin()));
+      }
     }
 
     // Keyboard Escape handler for modals and inspection panel
@@ -3442,6 +3486,7 @@
       selectResponseOption,
       recordDecision,
       closeInspectionPanel,
+      togglePanelExpand,
       resetOverview,
       fitDublin,
       toggleFollowUnit,
@@ -3513,6 +3558,16 @@
 
     window.observatory = observatoryApi;
     window.publicDemoApp = observatoryApi;
+
+    let lastViewportWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      const width = window.innerWidth;
+      if (width === lastViewportWidth) return;
+      lastViewportWidth = width;
+      window.setTimeout(() => {
+        if (state.map && document.getElementById('inspection-panel')?.classList.contains('hidden')) fitDublin();
+      }, 180);
+    });
 
     if (document.readyState === 'loading') {
       window.addEventListener('DOMContentLoaded', () => observatoryApi.init());
