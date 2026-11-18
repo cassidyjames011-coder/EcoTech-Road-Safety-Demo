@@ -1,0 +1,212 @@
+{
+  "contractVersion": "1.0.0",
+  "source": "RSA/CSO ROA20",
+  "sourceUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/ROA20/CSV/1.0/en",
+  "sourceSha256": "c687b1c68866ec5ac53d42bd7c070d9a4c40b581de4857299661a77c0967c921",
+  "retrievedAt": "2026-11-09T12:25:49+00:00",
+  "dataLastUpdated": "2021-07-09",
+  "provenance": "public_historical_county_aggregate",
+  "limitation": "County-level 2005–2012 history only; no current or corridor-level risk inference",
+  "records": [
+    {
+      "id": "rsa-roa20-dublin-2005-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2005",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 1370,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2005
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    },
+    {
+      "id": "rsa-roa20-dublin-2006-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2006",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 1320,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2006
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    },
+    {
+      "id": "rsa-roa20-dublin-2007-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2007",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 970,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2007
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    },
+    {
+      "id": "rsa-roa20-dublin-2008-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2008",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 1544,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2008
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    },
+    {
+      "id": "rsa-roa20-dublin-2009-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2009",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 1547,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2009
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    },
+    {
+      "id": "rsa-roa20-dublin-2010-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2010",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 1387,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2010
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    },
+    {
+      "id": "rsa-roa20-dublin-2011-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2011",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 1279,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2011
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    },
+    {
+      "id": "rsa-roa20-dublin-2012-fatal-injury-collisions",
+      "originalSourceId": "ROA20:Dublin:ROA20C3:2012",
+      "source": "RSA/CSO ROA20 public aggregate",
+      "adapterVersion": "1.0.0",
+      "metric": "county_fatal_and_injury_collisions",
+      "value": 1527,
+      "unit": "Number",
+      "observationInterval": {
+        "year": 2012
+      },
+      "retrievedAt": "2026-11-09T12:25:49+00:00",
+      "location": {
+        "county": "Dublin",
+        "precision": "county"
+      },
+      "coverage": "Dublin county aggregate; no corridor or junction location",
+      "matchingMethod": "county label only; no scenario-zone matching",
+      "provenance": "public_historical_county_aggregate",
+      "quality": {
+        "missing": false,
+        "historical": true
+      },
+      "licence": "CC BY 4.0; Road Safety Authority via CSO ROA20"
+    }
+  ]
+}

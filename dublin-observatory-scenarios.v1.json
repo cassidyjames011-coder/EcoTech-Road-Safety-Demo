@@ -1,0 +1,346 @@
+{
+  "contractVersion": "1.0.0",
+  "suiteId": "dublin-road-risk-observatory-public-demo-v1",
+  "suiteVersion": "1.0.0",
+  "title": "Dublin Road-Risk Evaluation Observatory — Public Demonstration Sandbox",
+  "provisionalStatus": "provisional_pending_owner_review",
+  "overviewCenter": [53.324, -6.285],
+  "overviewZoom": 11,
+  "externalFeeds": {
+    "tii": {
+      "id": "tii",
+      "label": "TII Traffic Counters (TMU Live Feed)",
+      "configured": false,
+      "status": "not_connected",
+      "detail": "External live feed not configured in standalone public demo"
+    },
+    "met": {
+      "id": "met",
+      "label": "Met Éireann Surface Weather Feed",
+      "configured": false,
+      "status": "not_connected",
+      "detail": "External live feed not configured in standalone public demo"
+    }
+  },
+  "decisionChoices": [
+    "Accepted",
+    "Modified",
+    "Rejected",
+    "Deferred"
+  ],
+  "decisionReasons": [
+    "Proportionate response selected",
+    "Modify time window or scope",
+    "Likely random / chance cluster",
+    "Insufficient or synthetic-only evidence",
+    "Existing roadworks / patrol covers risk",
+    "Defer pending verified counter feed"
+  ],
+  "constraints": {
+    "noLogin": true,
+    "noBackendCredentials": true,
+    "noOperationalApi": true,
+    "noSharedWrites": true,
+    "noActualDispatch": true,
+    "noOffenceProcessing": true,
+    "noLiveAi": true
+  },
+  "scenarios": [
+    {
+      "id": "DEMO-SCEN-01",
+      "shortLabel": "Speeding",
+      "theme": "Speeding Spike",
+      "title": "N11 Cabinteely Vicinity — Speeding Theme",
+      "locationShort": "N11 Cabinteely vicinity (Provisional)",
+      "city": "Dublin",
+      "country": "Ireland",
+      "provisionalSetting": true,
+      "roadCorridorLabel": "Bounded strictly to N11 Dual Carriageway (550m Cluster Zone)",
+      "geometryStatus": "approximate_corridor_zone_and_3pt_centerline",
+      "isSurveyedOrRoadSnapped": false,
+      "geometryDisclosure": "Circle/oblong zone and 3-point corridor line are approximate illustrative overlays along the N11 carriageway, not survey-grade or 1:1 road-snapped GIS boundaries.",
+      "icon": "fa-gauge-high",
+      "dbMapping": "Unassigned",
+      "center": [53.2610, -6.1524],
+      "zoom": 15,
+      "radiusMeters": 550,
+      "oblongLengthMeters": 920,
+      "oblongWidthMeters": 165,
+      "bearingDeg": 141,
+      "approximateWaypoints": [
+        [53.2662, -6.1586],
+        [53.2610, -6.1524],
+        [53.2557, -6.1463]
+      ],
+      "windowBadge": "18h Expiring Window",
+      "chanceAdjustedConfidence": 0.86,
+      "confidenceLabel": "Illustrative Index: 0.86 (Synthetic)",
+      "uncertaintyRange": "0.64 – 0.85 (Illustrative Synthetic Range — Not Statistically Validated)",
+      "counterfactualNote": "Counterfactual note (illustrative): Corridor remains below acute review threshold when simulated evening wet-surface and off-peak speed variance inputs are removed.",
+      "publicReferenceContext": [
+        "Dual carriageway arterial context (N11 radial)",
+        "Posted speed limit not verified for this provisional demo location",
+        "Junction and bus-priority attributes require map or authority verification"
+      ],
+      "syntheticScenarioInputs": [
+        "Cluster zone limited strictly to N11 carriageway (550m radius)",
+        "Simulated off-peak 85th-percentile speed +16 km/h over baseline (synthetic input)",
+        "Simulated wet-surface braking distance variance (synthetic scenario assumption)"
+      ],
+      "chartTitle": "24h Illustrative Speed Profile: Reference Context vs. Synthetic 85th-Pct Input (km/h)",
+      "chartLabels": ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "22:00"],
+      "chartReferenceLabel": "Posted Limit / Illustrative Reference (km/h)",
+      "chartReferenceData": [80, 80, 76, 78, 75, 80, 80],
+      "chartSyntheticLabel": "Synthetic 85th-Pct Speed Input (km/h, Non-Calibrated)",
+      "chartSyntheticData": [84, 83, 79, 82, 81, 94, 96],
+      "responses": [
+        {
+          "id": "RESP-01A",
+          "name": "Time-Window Mobile Speed Monitoring",
+          "tier": "Event-Specific Operational (Simulated)",
+          "expectedEffect": "High short-term reduction in off-peak excess speed (illustrative scenario assumption; not a validated effectiveness estimate).",
+          "displacementRisk": "Low-Moderate: Potential minor diversion to parallel local Cabinteely village road.",
+          "safeguardNote": "Feedback-Loop Protection: Patrol-window detections are exposure-discounted so deployment does not self-reinforce subsequent alerts."
+        },
+        {
+          "id": "RESP-01B",
+          "name": "Dynamic Speed Indicator / Advisory Signage",
+          "tier": "Behavioural Nudge (Simulated)",
+          "expectedEffect": "Moderate speed harmonisation along approach (illustrative scenario assumption; not a validated effectiveness estimate).",
+          "displacementRisk": "Negligible corridor displacement.",
+          "safeguardNote": "Non-punitive advisory intervention; zero individual vehicle data collection."
+        },
+        {
+          "id": "RESP-01C",
+          "name": "Observe Only / Verify Counter Baseline",
+          "tier": "Passive Monitoring (Simulated)",
+          "expectedEffect": "No immediate traffic effect; validates whether spike persists across next cycle.",
+          "displacementRisk": "None.",
+          "safeguardNote": "Appropriate when synthetic/unverified inputs require corroboration before resource commitment."
+        }
+      ]
+    },
+    {
+      "id": "DEMO-SCEN-02",
+      "shortLabel": "Near-Miss Cluster",
+      "theme": "Near-Miss Cluster",
+      "title": "M50 J7 / Lucan Interchange Vicinity — Near-Miss Cluster",
+      "locationShort": "M50 J7 / Lucan vicinity (Provisional)",
+      "city": "Dublin",
+      "country": "Ireland",
+      "provisionalSetting": true,
+      "roadCorridorLabel": "Bounded strictly to M50 J7 Mainline & Merge Weave (600m Zone)",
+      "geometryStatus": "approximate_corridor_zone_and_3pt_centerline",
+      "isSurveyedOrRoadSnapped": false,
+      "geometryDisclosure": "Circle/oblong zone and 3-point corridor line are approximate illustrative overlays near M50 J7, not survey-grade or 1:1 road-snapped GIS boundaries.",
+      "icon": "fa-car-burst",
+      "dbMapping": "Unassigned",
+      "center": [53.3562, -6.3881],
+      "zoom": 15,
+      "radiusMeters": 600,
+      "oblongLengthMeters": 1050,
+      "oblongWidthMeters": 210,
+      "bearingDeg": 172,
+      "approximateWaypoints": [
+        [53.3622, -6.3895],
+        [53.3562, -6.3881],
+        [53.3502, -6.3864]
+      ],
+      "windowBadge": "18h Cluster (600m)",
+      "chanceAdjustedConfidence": 0.89,
+      "confidenceLabel": "Illustrative Index: 0.89 (Synthetic)",
+      "uncertaintyRange": "0.71 – 0.91 (Illustrative Synthetic Range — Not Statistically Validated)",
+      "counterfactualNote": "Counterfactual note (illustrative): Isolated single braking events are filtered out; alert requires spatial-temporal co-clustering within the 600m M50 J7 zone.",
+      "publicReferenceContext": [
+        "High-volume motorway interchange merge/weave (M50 / N4)",
+        "Posted speed limit and lane transition details not verified for this demo location",
+        "Multi-lane grade-separated junction geometry"
+      ],
+      "syntheticScenarioInputs": [
+        "4 simulated near-miss conflicts inside 600m M50 J7 zone (18h)",
+        "Simulated fleet telematics harsh-braking cluster (>0.4g decel, synthetic input)",
+        "Simulated slip-road vs. mainline speed differential (+34 km/h, synthetic input)"
+      ],
+      "chartTitle": "24h Illustrative Conflict Index: Reference Baseline vs. Synthetic Braking Cluster",
+      "chartLabels": ["00:00", "04:00", "08:00", "12:00", "16:00", "18:00", "21:00"],
+      "chartReferenceLabel": "Illustrative Interchange Baseline (Index)",
+      "chartReferenceData": [2, 2, 6, 4, 6, 7, 3],
+      "chartSyntheticLabel": "Synthetic Harsh Braking / Near-Miss Index (Non-Calibrated)",
+      "chartSyntheticData": [2, 3, 11, 6, 15, 19, 8],
+      "responses": [
+        {
+          "id": "RESP-02A",
+          "name": "Merge-Lane Engineering & Signage Audit",
+          "tier": "Problem-Specific Engineering (Simulated)",
+          "expectedEffect": "Addresses structural weave length, road markings, and advance lane guidance (illustrative qualitative assessment).",
+          "displacementRisk": "None (focused on mainline merge geometry review).",
+          "safeguardNote": "Infrastructure-led response; no individual driver enforcement or surveillance expansion."
+        },
+        {
+          "id": "RESP-02B",
+          "name": "Variable Message Sign (VMS) Queue & Merge Warning",
+          "tier": "Dynamic Corridor Management (Simulated)",
+          "expectedEffect": "Aims to reduce sudden rear-end deceleration waves during peak merge inflows (illustrative assumption).",
+          "displacementRisk": "Low.",
+          "safeguardNote": "Time-bounded to peak merge hours; automatically expires with alert window."
+        },
+        {
+          "id": "RESP-02C",
+          "name": "High-Visibility Trunk Road Patrol",
+          "tier": "Operational Presence (Simulated)",
+          "expectedEffect": "Deters late-lane weaving during peak merge window (illustrative assumption).",
+          "displacementRisk": "Caution: Stationary patrol on motorway shoulder can induce secondary rubbernecking braking.",
+          "safeguardNote": "Requires human planner trade-off review before deployment on high-speed merge."
+        }
+      ]
+    },
+    {
+      "id": "DEMO-SCEN-03",
+      "shortLabel": "Roadworks / Hazard",
+      "theme": "Roadworks / Hazard",
+      "title": "Chapelizod Bypass (R148) — Roadworks / Road Hazard",
+      "locationShort": "Chapelizod Bypass (Provisional)",
+      "city": "Dublin",
+      "country": "Ireland",
+      "provisionalSetting": true,
+      "roadCorridorLabel": "Bounded strictly to R148 Chapelizod Bypass Corridor (550m Zone)",
+      "geometryStatus": "approximate_corridor_zone_and_3pt_centerline",
+      "isSurveyedOrRoadSnapped": false,
+      "geometryDisclosure": "Circle/oblong zone and 3-point corridor line are approximate illustrative overlays along the R148 Chapelizod Bypass, not survey-grade or 1:1 road-snapped GIS boundaries.",
+      "icon": "fa-person-digging",
+      "dbMapping": "Unassigned",
+      "center": [53.3451, -6.3322],
+      "zoom": 15,
+      "radiusMeters": 550,
+      "oblongLengthMeters": 980,
+      "oblongWidthMeters": 160,
+      "bearingDeg": 98,
+      "approximateWaypoints": [
+        [53.3461, -6.3422],
+        [53.3451, -6.3322],
+        [53.3446, -6.3220]
+      ],
+      "windowBadge": "Active Works Window",
+      "chanceAdjustedConfidence": 0.84,
+      "confidenceLabel": "Illustrative Index: 0.84 (Synthetic)",
+      "uncertaintyRange": "0.61 – 0.86 (Illustrative Synthetic Range — Not Statistically Validated)",
+      "counterfactualNote": "Counterfactual note (illustrative): Elevated risk is driven by upstream approach deceleration into temporary taper rather than chronic segment history.",
+      "publicReferenceContext": [
+        "Multi-lane radial arterial corridor (R148 Chapelizod Bypass)",
+        "Posted speed limit transition not verified for this demo location",
+        "Sightline and roadworks status not independently verified"
+      ],
+      "syntheticScenarioInputs": [
+        "Cluster zone limited strictly to R148 carriageway taper (550m)",
+        "Simulated upstream queue-tail shockwave propagation (synthetic input)",
+        "Simulated approach-to-taper speed variance surge (synthetic input)"
+      ],
+      "chartTitle": "24h Illustrative Speed Variance (Std Dev km/h): Baseline vs. Synthetic Works Taper",
+      "chartLabels": ["00:00", "04:00", "08:00", "12:00", "16:00", "18:00", "21:00"],
+      "chartReferenceLabel": "Illustrative Normal Corridor Std Dev (km/h)",
+      "chartReferenceData": [5, 5, 8, 7, 8, 9, 6],
+      "chartSyntheticLabel": "Synthetic Works Taper Std Dev (km/h, Non-Calibrated)",
+      "chartSyntheticData": [6, 6, 18, 15, 21, 23, 12],
+      "responses": [
+        {
+          "id": "RESP-03A",
+          "name": "Temporary Traffic Management (TTM) Taper Extension",
+          "tier": "Roadworks Engineering Adjustment (Simulated)",
+          "expectedEffect": "Extends advance warning signage 300m upstream to smooth braking gradient (illustrative engineering assumption).",
+          "displacementRisk": "Monitored: Checks for rat-running displacement through Chapelizod village.",
+          "safeguardNote": "Directly targets physical hazard layout; evaluated via upstream speed variance review."
+        },
+        {
+          "id": "RESP-03B",
+          "name": "Upstream Stepped Advisory Speed Harmonisation",
+          "tier": "Corridor Control (Simulated)",
+          "expectedEffect": "Dampens shockwave compression prior to lane drop (illustrative scenario assumption).",
+          "displacementRisk": "Low.",
+          "safeguardNote": "Temporary measure linked strictly to active roadworks permit window."
+        },
+        {
+          "id": "RESP-03C",
+          "name": "Defer Pending Scheduled Works Completion",
+          "tier": "Supervisory Deferral (Simulated)",
+          "expectedEffect": "Maintains monitoring until works clear.",
+          "displacementRisk": "None.",
+          "safeguardNote": "Recorded in session log when works are scheduled to conclude imminently."
+        }
+      ]
+    },
+    {
+      "id": "DEMO-SCEN-04",
+      "shortLabel": "Vulnerable Users",
+      "theme": "Vulnerable Road Users",
+      "title": "Grand Canal, Portobello Vicinity — Vulnerable Road Users",
+      "locationShort": "Grand Canal, Portobello (Provisional)",
+      "city": "Dublin",
+      "country": "Ireland",
+      "provisionalSetting": true,
+      "roadCorridorLabel": "Bounded strictly to R111 Grand Canal Cycle/Arterial Corridor (400m Zone)",
+      "geometryStatus": "approximate_corridor_zone_and_3pt_centerline",
+      "isSurveyedOrRoadSnapped": false,
+      "geometryDisclosure": "Circle/oblong zone and 3-point corridor line are approximate illustrative overlays along the R111 Grand Canal corridor, not survey-grade or 1:1 road-snapped GIS boundaries.",
+      "icon": "fa-person-biking",
+      "dbMapping": "Unassigned",
+      "center": [53.3304, -6.2644],
+      "zoom": 15,
+      "radiusMeters": 400,
+      "oblongLengthMeters": 700,
+      "oblongWidthMeters": 135,
+      "bearingDeg": 84,
+      "approximateWaypoints": [
+        [53.3300, -6.2712],
+        [53.3304, -6.2644],
+        [53.3312, -6.2580]
+      ],
+      "windowBadge": "Commuter Peak Focus",
+      "chanceAdjustedConfidence": 0.91,
+      "confidenceLabel": "Illustrative Index: 0.91 (Synthetic)",
+      "uncertaintyRange": "0.74 – 0.93 (Illustrative Synthetic Range — Not Statistically Validated)",
+      "counterfactualNote": "Counterfactual note (illustrative): Risk concentrates sharply during 07:30–09:30 and 16:30–18:30 commuter turning phases.",
+      "publicReferenceContext": [
+        "Urban canal arterial & cycleway desire-line intersection",
+        "Posted speed limit transition not verified for this demo location",
+        "Pedestrian and cyclist volumes are unknown without a count source"
+      ],
+      "syntheticScenarioInputs": [
+        "400m cluster zone bounded to R111 Grand Canal crossings",
+        "Simulated turning-hook conflict cluster (PET < 1.5s, synthetic input)",
+        "Simulated commuter-peak cyclist/vehicle pinch-point reports (synthetic input)"
+      ],
+      "chartTitle": "24h Illustrative VRU Conflict Index: Crossing Baseline vs. Synthetic Peak Cluster",
+      "chartLabels": ["04:00", "07:00", "08:30", "12:00", "16:00", "17:30", "21:00"],
+      "chartReferenceLabel": "Illustrative Urban Crossing Baseline (Index)",
+      "chartReferenceData": [1, 3, 5, 3, 4, 5, 2],
+      "chartSyntheticLabel": "Synthetic VRU Turning Conflict Index (Non-Calibrated)",
+      "chartSyntheticData": [1, 8, 17, 6, 12, 19, 4],
+      "responses": [
+        {
+          "id": "RESP-04A",
+          "name": "Signal Phase Lead-Interval (Cyclist/Ped Early Start) Review",
+          "tier": "Problem-Specific Signal Engineering (Simulated)",
+          "expectedEffect": "Sustained reduction in left/right-hook turning conflicts (illustrative engineering assumption).",
+          "displacementRisk": "Minor (illustrative peak-phase motor queue delay).",
+          "safeguardNote": "Structural protection for vulnerable road users without camera enforcement."
+        },
+        {
+          "id": "RESP-04B",
+          "name": "Junction Sightline, Kerb Radii & Dusk Lighting Audit",
+          "tier": "Infrastructure Inspection (Simulated)",
+          "expectedEffect": "Improves turning inter-visibility and slows turning radii (illustrative qualitative assessment).",
+          "displacementRisk": "None.",
+          "safeguardNote": "Low-cost physical safety audit."
+        },
+        {
+          "id": "RESP-04C",
+          "name": "Peak-Hour Junction Advisory / Marshal Presence",
+          "tier": "Short-Term Behavioural (Simulated)",
+          "expectedEffect": "Immediate temporary awareness during wet commuter peak (illustrative assumption).",
+          "displacementRisk": "None.",
+          "safeguardNote": "Time-limited support while engineering review is scheduled."
+        }
+      ]
+    }
+  ]
+}

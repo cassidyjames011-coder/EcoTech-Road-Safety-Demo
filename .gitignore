@@ -1,0 +1,24 @@
+# Local configuration and credentials
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated and personal files
+node_modules/
+dist/
+build/
+coverage/
+*.log
+*.tmp
+*.bak
+*.orig
+*~
+.DS_Store
+Thumbs.db
+screenshots/
+evidence/

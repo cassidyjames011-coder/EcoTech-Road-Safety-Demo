@@ -1,0 +1,2558 @@
+{
+  "contractVersion": "1.0.0",
+  "fixtureRevision": "2026-11-14-risk-completion-1",
+  "suiteId": "ecotech-risk-event-pipeline-synthetic-v1",
+  "suiteVersion": "1.0.0",
+  "referenceTimeUtc": "2026-11-14T12:00:00Z",
+  "clock": {
+    "totalMinutes": 36,
+    "tickMinutes": 1
+  },
+  "provenance": "entirely_synthetic_replay",
+  "disclosure": "All observations, confirmations, alerts and outcomes in this fixture are fictional. Provisional demonstration geography is not a verified road-segment match.",
+  "scenarios": [
+    {
+      "scenarioId": "RISK-DEMO-A",
+      "title": "Confirmed collision within simulation",
+      "theme": "confirmed collision",
+      "location": {
+        "label": "N11 Cabinteely fictional exercise",
+        "center": [
+          53.261,
+          -6.1524
+        ],
+        "roadSegmentId": "SIM-N11-CABINTEELY",
+        "roadDirection": "northbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "responseOutcome": {
+        "outcomeId": "RISK-DEMO-A-OUTCOME-01",
+        "availableAfterArrivalMinutes": 3,
+        "validForMinutes": 10,
+        "observationTemplate": {
+          "sourceId": "RISK-DEMO-A:response_controller",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "response_controller",
+          "sourceProvider": "EcoTech fictional scenario controller",
+          "sourceRecordId": "RISK-DEMO-A:response_controller:resolution",
+          "independenceGroup": "response_controller",
+          "observationCategory": "collision_report",
+          "measurementType": "incident_resolution",
+          "measurementValue": 1,
+          "measurementUnit": "boolean",
+          "qualityStatus": "usable",
+          "metadata": {
+            "syntheticDisclosure": "Fictional response outcome only; no real collision or dispatch is asserted.",
+            "roadSegmentVerified": false,
+            "confirmationAuthority": { "type": "synthetic_controller", "confirmedWithinSimulation": true },
+            "confirmationScope": "simulation_only"
+          }
+        }
+      },
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "No incident report"
+        },
+        {
+          "minute": 5,
+          "classification": "unverified_anomaly",
+          "lifecycleStatus": "awaiting_verification",
+          "alertAction": "generate",
+          "reason": "A fictional report alone is unverified"
+        },
+        {
+          "minute": 8,
+          "classification": "confirmed_incident",
+          "lifecycleStatus": "active",
+          "alertAction": "escalate",
+          "reason": "Explicit fictional controller confirmation arrived"
+        },
+        {
+          "minute": 28,
+          "classification": "confirmed_incident",
+          "lifecycleStatus": "resolved",
+          "alertAction": "withdraw",
+          "reason": "Fictional controller resolution arrived"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-A-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-A:field_alpha",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "field_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-A:field_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "collision_report",
+          "measurementType": "incident_report",
+          "measurementValue": 1,
+          "measurementUnit": "boolean",
+          "observedAt": "2026-11-14T12:05:00Z",
+          "receivedAt": "2026-11-14T12:05:00Z",
+          "validFrom": "2026-11-14T12:05:00Z",
+          "validUntil": "2026-11-14T12:17:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-A-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "unverified",
+          "qualityReasons": [
+            "Fictional unverified evidence"
+          ],
+          "independenceGroup": "field_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-A",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-A-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-A:controller_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "controller_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-A:controller_beta:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "collision_report",
+          "measurementType": "incident_confirmation",
+          "measurementValue": 1,
+          "measurementUnit": "boolean",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-A-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "controller_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-A",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false,
+            "confirmationAuthority": {
+              "type": "synthetic_controller",
+              "label": "Fictional scenario controller",
+              "confirmedWithinSimulation": true
+            },
+            "confirmationScope": "simulation_only",
+            "simulatedImpact": "minor_property_damage_only"
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-A-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-A:controller_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "controller_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-A:controller_beta:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "collision_report",
+          "measurementType": "incident_resolution",
+          "measurementValue": 1,
+          "measurementUnit": "boolean",
+          "observedAt": "2026-11-14T12:28:00Z",
+          "receivedAt": "2026-11-14T12:28:00Z",
+          "validFrom": "2026-11-14T12:28:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-A-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "controller_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-A",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false,
+            "confirmationAuthority": {
+              "type": "synthetic_controller",
+              "label": "Fictional scenario controller",
+              "confirmedWithinSimulation": true
+            },
+            "confirmationScope": "simulation_only"
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-B",
+      "title": "Confirmed standing-water condition within simulation",
+      "theme": "confirmed road hazard",
+      "location": {
+        "label": "Chapelizod Bypass fictional exercise",
+        "center": [
+          53.3451,
+          -6.3322
+        ],
+        "roadSegmentId": "SIM-R148-CHAPELIZOD",
+        "roadDirection": "eastbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "Dry fictional baseline"
+        },
+        {
+          "minute": 8,
+          "classification": "confirmed_hazardous_condition",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Fictional road-surface measurement confirmed within simulation"
+        },
+        {
+          "minute": 28,
+          "classification": "confirmed_hazardous_condition",
+          "lifecycleStatus": "resolved",
+          "alertAction": "withdraw",
+          "reason": "Fictional repeat measurement is below the scenario threshold"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-B-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-B:surface_alpha",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-B:surface_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "water_depth",
+          "measurementValue": 0,
+          "measurementUnit": "mm",
+          "observedAt": "2026-11-14T12:00:00Z",
+          "receivedAt": "2026-11-14T12:00:00Z",
+          "validFrom": "2026-11-14T12:00:00Z",
+          "validUntil": "2026-11-14T12:12:00Z",
+          "location": {
+            "lat": 53.3451,
+            "lon": -6.3322
+          },
+          "roadSegmentId": "SIM-R148-CHAPELIZOD",
+          "roadDirection": "eastbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-B-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-B",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-B-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-B:surface_alpha",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-B:surface_alpha:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "water_depth",
+          "measurementValue": 35,
+          "measurementUnit": "mm",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": {
+            "lat": 53.3451,
+            "lon": -6.3322
+          },
+          "roadSegmentId": "SIM-R148-CHAPELIZOD",
+          "roadDirection": "eastbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-B-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-B",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false,
+            "confirmationAuthority": {
+              "type": "synthetic_controller",
+              "label": "Fictional scenario controller",
+              "confirmedWithinSimulation": true
+            },
+            "confirmationScope": "simulation_only"
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-B-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-B:surface_alpha",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-B:surface_alpha:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "water_depth",
+          "measurementValue": 0,
+          "measurementUnit": "mm",
+          "observedAt": "2026-11-14T12:28:00Z",
+          "receivedAt": "2026-11-14T12:28:00Z",
+          "validFrom": "2026-11-14T12:28:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3451,
+            "lon": -6.3322
+          },
+          "roadSegmentId": "SIM-R148-CHAPELIZOD",
+          "roadDirection": "eastbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-B-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-B",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false,
+            "confirmationAuthority": {
+              "type": "synthetic_controller",
+              "label": "Fictional scenario controller",
+              "confirmedWithinSimulation": true
+            },
+            "confirmationScope": "simulation_only"
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-C",
+      "title": "Emerging heavy-rainfall hazard",
+      "theme": "emerging rainfall",
+      "location": {
+        "label": "Grand Canal Portobello fictional exercise",
+        "center": [
+          53.3304,
+          -6.2644
+        ],
+        "roadSegmentId": "SIM-PORTOBELLO",
+        "roadDirection": "both",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "Single light-rain baseline"
+        },
+        {
+          "minute": 10,
+          "classification": "emerging_hazard",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Three increasing fictional rainfall observations establish a trend"
+        },
+        {
+          "minute": 14,
+          "classification": "emerging_hazard",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Separate synthetic-controller road-surface evidence confirms standing water and links both assessments without asserting causation"
+        },
+        {
+          "minute": 20,
+          "classification": "emerging_hazard",
+          "lifecycleStatus": "active",
+          "alertAction": "withdraw",
+          "reason": "Independent fictional road-surface clearance resolves standing water; the rainfall trend remains a separate assessment"
+        },
+        {
+          "minute": 24,
+          "classification": "emerging_hazard",
+          "lifecycleStatus": "withdrawn",
+          "alertAction": "withdraw",
+          "reason": "Later fictional rain rate declines"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-C-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-C:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-C:weather_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 0.5,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:00:00Z",
+          "receivedAt": "2026-11-14T12:00:00Z",
+          "validFrom": "2026-11-14T12:00:00Z",
+          "validUntil": "2026-11-14T12:23:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "both",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-C-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-C",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-C-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-C:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-C:weather_alpha:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 2.5,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:05:00Z",
+          "receivedAt": "2026-11-14T12:05:00Z",
+          "validFrom": "2026-11-14T12:05:00Z",
+          "validUntil": "2026-11-14T12:23:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "both",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-C-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-C",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-C-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-C:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-C:weather_alpha:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 5,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:10:00Z",
+          "receivedAt": "2026-11-14T12:10:00Z",
+          "validFrom": "2026-11-14T12:10:00Z",
+          "validUntil": "2026-11-14T12:23:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "both",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-C-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-C",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-C-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-C:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-C:weather_alpha:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 0.4,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:24:00Z",
+          "receivedAt": "2026-11-14T12:24:00Z",
+          "validFrom": "2026-11-14T12:24:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "both",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-C-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-C",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-C-O05",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-C:surface_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_beta",
+          "sourceProvider": "EcoTech fictional scenario controller",
+          "sourceRecordId": "RISK-DEMO-C:surface_beta:05",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "water_depth",
+          "measurementValue": 28,
+          "measurementUnit": "mm",
+          "observedAt": "2026-11-14T12:14:00Z",
+          "receivedAt": "2026-11-14T12:14:00Z",
+          "validFrom": "2026-11-14T12:14:00Z",
+          "validUntil": "2026-11-14T12:19:00Z",
+          "location": { "lat": 53.3304, "lon": -6.2644 },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "both",
+          "spatialCoverage": { "type": "provisional_demo_area", "areaId": "RISK-DEMO-C-AREA", "radiusMeters": 500, "verified": false },
+          "spatialUncertainty": { "method": "provisional", "radiusMeters": 500 },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-C",
+          "metadata": {
+            "syntheticDisclosure": "Independent fictional road-surface observation; no actual Irish road hazard asserted.",
+            "roadSegmentVerified": false,
+            "confirmationAuthority": { "type": "synthetic_controller", "label": "Fictional scenario controller", "confirmedWithinSimulation": true },
+            "confirmationScope": "simulation_only",
+            "relationType": "contextual_temporal_scope",
+            "relatedRiskEventSubtype": "increasing_rainfall",
+            "relatedRiskRuleId": "SIM-RAIN-TREND"
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-C-O06",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-C:surface_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_beta",
+          "sourceProvider": "EcoTech fictional scenario controller",
+          "sourceRecordId": "RISK-DEMO-C:surface_beta:06",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "water_depth",
+          "measurementValue": 0,
+          "measurementUnit": "mm",
+          "observedAt": "2026-11-14T12:20:00Z",
+          "receivedAt": "2026-11-14T12:20:00Z",
+          "validFrom": "2026-11-14T12:20:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": { "lat": 53.3304, "lon": -6.2644 },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "both",
+          "spatialCoverage": { "type": "provisional_demo_area", "areaId": "RISK-DEMO-C-AREA", "radiusMeters": 500, "verified": false },
+          "spatialUncertainty": { "method": "provisional", "radiusMeters": 500 },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-C",
+          "metadata": {
+            "syntheticDisclosure": "Fictional road-surface clearance observation; no actual Irish road condition asserted.",
+            "roadSegmentVerified": false,
+            "confirmationAuthority": { "type": "synthetic_controller", "label": "Fictional scenario controller", "confirmedWithinSimulation": true },
+            "confirmationScope": "simulation_only"
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-D",
+      "title": "Compound wet-weather collision risk",
+      "theme": "predictive wet-weather risk",
+      "location": {
+        "label": "M50 J7 fictional exercise",
+        "center": [
+          53.3562,
+          -6.3881
+        ],
+        "roadSegmentId": "SIM-M50-J7",
+        "roadDirection": "southbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "No matching evidence"
+        },
+        {
+          "minute": 10,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Independent fictional rain, traffic and speed evidence plus context converge"
+        },
+        {
+          "minute": 12,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "update",
+          "reason": "A separately authored fictional rain source improves evidence confidence without changing severity or urgency"
+        },
+        {
+          "minute": 16,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "escalate",
+          "reason": "A higher fictional rain intensity raises review urgency without changing severity"
+        },
+        {
+          "minute": 18,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "update",
+          "reason": "The original independent rain record expires, reducing evidence confidence while urgency remains elevated"
+        },
+        {
+          "minute": 26,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "withdrawn",
+          "alertAction": "withdraw",
+          "reason": "Fictional rain rate falls below rule requirement"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-D-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:weather_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 3,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:05:00Z",
+          "receivedAt": "2026-11-14T12:05:00Z",
+          "validFrom": "2026-11-14T12:05:00Z",
+          "validUntil": "2026-11-14T12:17:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-D-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:counter_beta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "counter_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:counter_beta:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_volume",
+          "measurementType": "vehicle_count",
+          "measurementValue": 2100,
+          "measurementUnit": "vehicles/h",
+          "observedAt": "2026-11-14T12:06:00Z",
+          "receivedAt": "2026-11-14T12:06:00Z",
+          "validFrom": "2026-11-14T12:06:00Z",
+          "validUntil": "2026-11-14T12:18:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-D-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "counter_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:fleet_gamma",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "fleet_gamma",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:fleet_gamma:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 72,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:07:00Z",
+          "receivedAt": "2026-11-14T12:07:00Z",
+          "validFrom": "2026-11-14T12:07:00Z",
+          "validUntil": "2026-11-14T12:19:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-D-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "fleet_gamma",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:geometry_delta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "geometry_delta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:geometry_delta:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_geometry",
+          "measurementType": "wet_curve_exposure",
+          "measurementValue": 0.8,
+          "measurementUnit": "index",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-D-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "geometry_delta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O05",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:history_epsilon",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "history_epsilon",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:history_epsilon:05",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "historical_road_safety_characteristic",
+          "measurementType": "wet_collision_vulnerability",
+          "measurementValue": 0.7,
+          "measurementUnit": "index",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-D-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "history_epsilon",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O07",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:weather_zeta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_zeta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:weather_zeta:07",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 2.5,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:12:00Z",
+          "receivedAt": "2026-11-14T12:12:00Z",
+          "validFrom": "2026-11-14T12:12:00Z",
+          "validUntil": "2026-11-14T12:25:00Z",
+          "location": { "lat": 53.3562, "lon": -6.3881 },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": { "type": "provisional_demo_area", "areaId": "RISK-DEMO-D-AREA", "radiusMeters": 500, "verified": false },
+          "spatialUncertainty": { "method": "provisional", "radiusMeters": 500 },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_zeta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": { "syntheticDisclosure": "Fictional independent rain corroboration; no actual Irish weather asserted.", "roadSegmentVerified": false }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O08",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:weather_zeta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_zeta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:weather_zeta:08",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 5.5,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:16:00Z",
+          "receivedAt": "2026-11-14T12:16:00Z",
+          "validFrom": "2026-11-14T12:16:00Z",
+          "validUntil": "2026-11-14T12:25:00Z",
+          "location": { "lat": 53.3562, "lon": -6.3881 },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": { "type": "provisional_demo_area", "areaId": "RISK-DEMO-D-AREA", "radiusMeters": 500, "verified": false },
+          "spatialUncertainty": { "method": "provisional", "radiusMeters": 500 },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_zeta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": { "syntheticDisclosure": "Fictional intensified rain from the same corroborating source; no actual Irish weather asserted.", "roadSegmentVerified": false }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O09",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:counter_beta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "counter_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:counter_beta:09",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_volume",
+          "measurementType": "vehicle_count",
+          "measurementValue": 2100,
+          "measurementUnit": "vehicles/h",
+          "observedAt": "2026-11-14T12:18:00Z",
+          "receivedAt": "2026-11-14T12:18:00Z",
+          "validFrom": "2026-11-14T12:18:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": { "lat": 53.3562, "lon": -6.3881 },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": { "type": "provisional_demo_area", "areaId": "RISK-DEMO-D-AREA", "radiusMeters": 500, "verified": false },
+          "spatialUncertainty": { "method": "provisional", "radiusMeters": 500 },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "counter_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": { "syntheticDisclosure": "Fictional traffic-flow refresh; no actual Dublin count asserted.", "roadSegmentVerified": false }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O10",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:fleet_gamma",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "fleet_gamma",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:fleet_gamma:10",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 72,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:18:00Z",
+          "receivedAt": "2026-11-14T12:18:00Z",
+          "validFrom": "2026-11-14T12:18:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": { "lat": 53.3562, "lon": -6.3881 },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": { "type": "provisional_demo_area", "areaId": "RISK-DEMO-D-AREA", "radiusMeters": 500, "verified": false },
+          "spatialUncertainty": { "method": "provisional", "radiusMeters": 500 },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "fleet_gamma",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": { "syntheticDisclosure": "Fictional speed refresh; no actual Dublin speed asserted.", "roadSegmentVerified": false }
+        },
+        {
+          "observationId": "RISK-DEMO-D-O06",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-D:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-D:weather_alpha:06",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 0.2,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:26:00Z",
+          "receivedAt": "2026-11-14T12:26:00Z",
+          "validFrom": "2026-11-14T12:26:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-D-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-D",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-E",
+      "title": "Unverified speed-collapse anomaly",
+      "theme": "unverified anomaly",
+      "location": {
+        "label": "N11 Cabinteely fictional exercise",
+        "center": [
+          53.261,
+          -6.1524
+        ],
+        "roadSegmentId": "SIM-N11-CABINTEELY",
+        "roadDirection": "northbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "Normal fictional baseline"
+        },
+        {
+          "minute": 6,
+          "classification": "unverified_anomaly",
+          "lifecycleStatus": "awaiting_verification",
+          "alertAction": "generate",
+          "reason": "A speed collapse warrants investigation, not collision confirmation"
+        },
+        {
+          "minute": 18,
+          "classification": "unverified_anomaly",
+          "lifecycleStatus": "monitoring",
+          "alertAction": "deescalate",
+          "reason": "A conflicting degraded report does not confirm an incident"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-E-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-E:speed_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-E:speed_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 78,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:00:00Z",
+          "receivedAt": "2026-11-14T12:00:00Z",
+          "validFrom": "2026-11-14T12:00:00Z",
+          "validUntil": "2026-11-14T12:12:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-E-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-E",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-E-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-E:speed_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-E:speed_alpha:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 24,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:06:00Z",
+          "receivedAt": "2026-11-14T12:06:00Z",
+          "validFrom": "2026-11-14T12:06:00Z",
+          "validUntil": "2026-11-14T12:18:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-E-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-E",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-E-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-E:field_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "field_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-E:field_beta:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "collision_report",
+          "measurementType": "incident_report",
+          "measurementValue": 1,
+          "measurementUnit": "boolean",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-E-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "conflicting",
+          "qualityReasons": [
+            "Unverified and contradicted fictional report"
+          ],
+          "independenceGroup": "field_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-E",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-E-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-E:speed_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-E:speed_alpha:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 76,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:18:00Z",
+          "receivedAt": "2026-11-14T12:18:00Z",
+          "validFrom": "2026-11-14T12:18:00Z",
+          "validUntil": "2026-11-14T12:30:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-E-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-E",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-F",
+      "title": "Queue-end collision risk",
+      "theme": "predictive queue-end risk",
+      "location": {
+        "label": "M50 J7 fictional exercise",
+        "center": [
+          53.3562,
+          -6.3881
+        ],
+        "roadSegmentId": "SIM-M50-J7",
+        "roadDirection": "southbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "No queue evidence"
+        },
+        {
+          "minute": 10,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Fictional queue length, speed differential and volume align"
+        },
+        {
+          "minute": 27,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "withdrawn",
+          "alertAction": "withdraw",
+          "reason": "Fictional queue dissipates"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-F-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-F:queue_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "queue_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-F:queue_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_congestion",
+          "measurementType": "queue_length",
+          "measurementValue": 1.5,
+          "measurementUnit": "km",
+          "observedAt": "2026-11-14T12:06:00Z",
+          "receivedAt": "2026-11-14T12:06:00Z",
+          "validFrom": "2026-11-14T12:06:00Z",
+          "validUntil": "2026-11-14T12:18:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-F-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "queue_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-F",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-F-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-F:speed_beta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-F:speed_beta:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 18,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:07:00Z",
+          "receivedAt": "2026-11-14T12:07:00Z",
+          "validFrom": "2026-11-14T12:07:00Z",
+          "validUntil": "2026-11-14T12:19:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-F-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-F",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false,
+            "position": "queue"
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-F-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-F:speed_gamma",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_gamma",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-F:speed_gamma:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 88,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-F-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_gamma",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-F",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false,
+            "position": "upstream"
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-F-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-F:counter_delta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "counter_delta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-F:counter_delta:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_volume",
+          "measurementType": "vehicle_count",
+          "measurementValue": 1900,
+          "measurementUnit": "vehicles/h",
+          "observedAt": "2026-11-14T12:09:00Z",
+          "receivedAt": "2026-11-14T12:09:00Z",
+          "validFrom": "2026-11-14T12:09:00Z",
+          "validUntil": "2026-11-14T12:21:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-F-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "counter_delta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-F",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-F-O05",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-F:queue_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "queue_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-F:queue_alpha:05",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_congestion",
+          "measurementType": "queue_length",
+          "measurementValue": 0.1,
+          "measurementUnit": "km",
+          "observedAt": "2026-11-14T12:27:00Z",
+          "receivedAt": "2026-11-14T12:27:00Z",
+          "validFrom": "2026-11-14T12:27:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-F-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "queue_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-F",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-G",
+      "title": "Ice-related collision risk",
+      "theme": "predictive ice risk",
+      "location": {
+        "label": "Chapelizod Bypass fictional exercise",
+        "center": [
+          53.3451,
+          -6.3322
+        ],
+        "roadSegmentId": "SIM-R148-CHAPELIZOD",
+        "roadDirection": "eastbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "No ice-related evidence"
+        },
+        {
+          "minute": 10,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Fictional subzero air and surface temperatures plus moisture align"
+        },
+        {
+          "minute": 25,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "withdrawn",
+          "alertAction": "withdraw",
+          "reason": "Fictional road surface warms"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-G-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-G:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-G:weather_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "temperature",
+          "measurementType": "air_temperature",
+          "measurementValue": -2,
+          "measurementUnit": "C",
+          "observedAt": "2026-11-14T12:05:00Z",
+          "receivedAt": "2026-11-14T12:05:00Z",
+          "validFrom": "2026-11-14T12:05:00Z",
+          "validUntil": "2026-11-14T12:17:00Z",
+          "location": {
+            "lat": 53.3451,
+            "lon": -6.3322
+          },
+          "roadSegmentId": "SIM-R148-CHAPELIZOD",
+          "roadDirection": "eastbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-G-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-G",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-G-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-G:surface_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-G:surface_beta:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "surface_temperature",
+          "measurementValue": -1,
+          "measurementUnit": "C",
+          "observedAt": "2026-11-14T12:06:00Z",
+          "receivedAt": "2026-11-14T12:06:00Z",
+          "validFrom": "2026-11-14T12:06:00Z",
+          "validUntil": "2026-11-14T12:18:00Z",
+          "location": {
+            "lat": 53.3451,
+            "lon": -6.3322
+          },
+          "roadSegmentId": "SIM-R148-CHAPELIZOD",
+          "roadDirection": "eastbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-G-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-G",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-G-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-G:surface_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-G:surface_beta:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "moisture_indicator",
+          "measurementValue": 1,
+          "measurementUnit": "index",
+          "observedAt": "2026-11-14T12:07:00Z",
+          "receivedAt": "2026-11-14T12:07:00Z",
+          "validFrom": "2026-11-14T12:07:00Z",
+          "validUntil": "2026-11-14T12:19:00Z",
+          "location": {
+            "lat": 53.3451,
+            "lon": -6.3322
+          },
+          "roadSegmentId": "SIM-R148-CHAPELIZOD",
+          "roadDirection": "eastbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-G-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-G",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-G-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-G:surface_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-G:surface_beta:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "surface_temperature",
+          "measurementValue": 3,
+          "measurementUnit": "C",
+          "observedAt": "2026-11-14T12:25:00Z",
+          "receivedAt": "2026-11-14T12:25:00Z",
+          "validFrom": "2026-11-14T12:25:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3451,
+            "lon": -6.3322
+          },
+          "roadSegmentId": "SIM-R148-CHAPELIZOD",
+          "roadDirection": "eastbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-G-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "surface_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-G",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-H",
+      "title": "Low-visibility collision risk",
+      "theme": "predictive visibility risk",
+      "location": {
+        "label": "Grand Canal Portobello fictional exercise",
+        "center": [
+          53.3304,
+          -6.2644
+        ],
+        "roadSegmentId": "SIM-PORTOBELLO",
+        "roadDirection": "westbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "No visibility evidence"
+        },
+        {
+          "minute": 10,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Fictional short sight distance and traffic exposure align"
+        },
+        {
+          "minute": 27,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "withdrawn",
+          "alertAction": "withdraw",
+          "reason": "Fictional visibility recovers"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-H-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-H:visibility_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "visibility_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-H:visibility_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "visibility",
+          "measurementType": "visibility_range",
+          "measurementValue": 90,
+          "measurementUnit": "m",
+          "observedAt": "2026-11-14T12:06:00Z",
+          "receivedAt": "2026-11-14T12:06:00Z",
+          "validFrom": "2026-11-14T12:06:00Z",
+          "validUntil": "2026-11-14T12:18:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "westbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-H-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "visibility_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-H",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-H-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-H:speed_beta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-H:speed_beta:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 80,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:07:00Z",
+          "receivedAt": "2026-11-14T12:07:00Z",
+          "validFrom": "2026-11-14T12:07:00Z",
+          "validUntil": "2026-11-14T12:19:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "westbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-H-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-H",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-H-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-H:counter_gamma",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "counter_gamma",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-H:counter_gamma:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_volume",
+          "measurementType": "vehicle_count",
+          "measurementValue": 1300,
+          "measurementUnit": "vehicles/h",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "westbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-H-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "counter_gamma",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-H",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-H-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-H:visibility_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "visibility_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-H:visibility_alpha:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "visibility",
+          "measurementType": "visibility_range",
+          "measurementValue": 900,
+          "measurementUnit": "m",
+          "observedAt": "2026-11-14T12:27:00Z",
+          "receivedAt": "2026-11-14T12:27:00Z",
+          "validFrom": "2026-11-14T12:27:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.3304,
+            "lon": -6.2644
+          },
+          "roadSegmentId": "SIM-PORTOBELLO",
+          "roadDirection": "westbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-H-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "visibility_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-H",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-I",
+      "title": "Roadworks-related collision risk",
+      "theme": "predictive roadworks risk",
+      "location": {
+        "label": "N11 Cabinteely fictional exercise",
+        "center": [
+          53.261,
+          -6.1524
+        ],
+        "roadSegmentId": "SIM-N11-CABINTEELY",
+        "roadDirection": "northbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "No works evidence"
+        },
+        {
+          "minute": 10,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "active",
+          "alertAction": "generate",
+          "reason": "Fictional works, queue and traffic exposure align"
+        },
+        {
+          "minute": 28,
+          "classification": "compound_predictive_risk",
+          "lifecycleStatus": "withdrawn",
+          "alertAction": "withdraw",
+          "reason": "Fictional works end"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-I-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-I:works_alpha",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "works_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-I:works_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "roadworks",
+          "measurementType": "works_active",
+          "measurementValue": 1,
+          "measurementUnit": "boolean",
+          "observedAt": "2026-11-14T12:05:00Z",
+          "receivedAt": "2026-11-14T12:05:00Z",
+          "validFrom": "2026-11-14T12:05:00Z",
+          "validUntil": "2026-11-14T12:17:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-I-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "works_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-I",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-I-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-I:queue_beta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "queue_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-I:queue_beta:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_congestion",
+          "measurementType": "queue_length",
+          "measurementValue": 1.2,
+          "measurementUnit": "km",
+          "observedAt": "2026-11-14T12:06:00Z",
+          "receivedAt": "2026-11-14T12:06:00Z",
+          "validFrom": "2026-11-14T12:06:00Z",
+          "validUntil": "2026-11-14T12:18:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-I-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "queue_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-I",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-I-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-I:speed_gamma",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_gamma",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-I:speed_gamma:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 65,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:07:00Z",
+          "receivedAt": "2026-11-14T12:07:00Z",
+          "validFrom": "2026-11-14T12:07:00Z",
+          "validUntil": "2026-11-14T12:19:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-I-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_gamma",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-I",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-I-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-I:counter_delta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "counter_delta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-I:counter_delta:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_volume",
+          "measurementType": "vehicle_count",
+          "measurementValue": 1600,
+          "measurementUnit": "vehicles/h",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-I-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "counter_delta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-I",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-I-O05",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-I:works_alpha",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "works_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-I:works_alpha:05",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "roadworks",
+          "measurementType": "works_active",
+          "measurementValue": 0,
+          "measurementUnit": "boolean",
+          "observedAt": "2026-11-14T12:28:00Z",
+          "receivedAt": "2026-11-14T12:28:00Z",
+          "validFrom": "2026-11-14T12:28:00Z",
+          "validUntil": "2026-11-14T12:36:00Z",
+          "location": {
+            "lat": 53.261,
+            "lon": -6.1524
+          },
+          "roadSegmentId": "SIM-N11-CABINTEELY",
+          "roadDirection": "northbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-I-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "works_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-I",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "scenarioId": "RISK-DEMO-J",
+      "title": "False alarm: degraded and conflicting observations",
+      "theme": "suppressed false alarm",
+      "location": {
+        "label": "M50 J7 fictional exercise",
+        "center": [
+          53.3562,
+          -6.3881
+        ],
+        "roadSegmentId": "SIM-M50-J7",
+        "roadDirection": "southbound",
+        "scopeStatus": "provisional_demo_only"
+      },
+      "seed": "ECOTECH-01",
+      "expectedTimeline": [
+        {
+          "minute": 0,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "No evidence"
+        },
+        {
+          "minute": 10,
+          "classification": null,
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "Degraded, conflicting and duplicate records cannot corroborate a hazard"
+        },
+        {
+          "minute": 15,
+          "classification": "unverified_anomaly",
+          "lifecycleStatus": "awaiting_verification",
+          "alertAction": "suppress",
+          "reason": "A separate minor fictional flow variation is informational only; no hazard alert is issued"
+        },
+        {
+          "minute": 36,
+          "classification": "unverified_anomaly",
+          "lifecycleStatus": "monitoring",
+          "alertAction": "suppress",
+          "reason": "The minor variation remains a historical, suppressed information record"
+        }
+      ],
+      "observations": [
+        {
+          "observationId": "RISK-DEMO-J-O01",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-J:weather_alpha",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "weather_alpha",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-J:weather_alpha:01",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "rainfall",
+          "measurementType": "rain_rate",
+          "measurementValue": 4,
+          "measurementUnit": "mm/h",
+          "observedAt": "2026-11-14T12:05:00Z",
+          "receivedAt": "2026-11-14T12:05:00Z",
+          "validFrom": "2026-11-14T12:05:00Z",
+          "validUntil": "2026-11-14T12:17:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-J-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "degraded",
+          "qualityReasons": [
+            "Synthetic sensor coverage degraded"
+          ],
+          "independenceGroup": "weather_alpha",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-J",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-J-O02",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-J:surface_beta",
+          "sourceType": "synthetic_field_report",
+          "sourceGroup": "surface_beta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-J:surface_beta:02",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "road_surface_condition",
+          "measurementType": "water_depth",
+          "measurementValue": 0,
+          "measurementUnit": "mm",
+          "observedAt": "2026-11-14T12:06:00Z",
+          "receivedAt": "2026-11-14T12:06:00Z",
+          "validFrom": "2026-11-14T12:06:00Z",
+          "validUntil": "2026-11-14T12:18:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-J-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "conflicting",
+          "qualityReasons": [
+            "Synthetic sources disagree on surface state"
+          ],
+          "independenceGroup": "surface_beta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-J",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-J-O03",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-J:speed_gamma",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_gamma",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-J:speed_gamma:03",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 20,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:07:00Z",
+          "receivedAt": "2026-11-14T12:07:00Z",
+          "validFrom": "2026-11-14T12:07:00Z",
+          "validUntil": "2026-11-14T12:19:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-J-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "speed_gamma",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-J",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-J-O04",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-J:speed_gamma",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "speed_gamma",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-J:speed_gamma:04",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_speed",
+          "measurementType": "speed",
+          "measurementValue": 20,
+          "measurementUnit": "km/h",
+          "observedAt": "2026-11-14T12:08:00Z",
+          "receivedAt": "2026-11-14T12:08:00Z",
+          "validFrom": "2026-11-14T12:08:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": {
+            "lat": 53.3562,
+            "lon": -6.3881
+          },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": {
+            "type": "provisional_demo_area",
+            "areaId": "RISK-DEMO-J-AREA",
+            "radiusMeters": 500,
+            "verified": false
+          },
+          "spatialUncertainty": {
+            "method": "provisional",
+            "radiusMeters": 500
+          },
+          "qualityStatus": "duplicate",
+          "qualityReasons": [
+            "Same upstream fictional measurement repeated"
+          ],
+          "independenceGroup": "speed_gamma",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-J",
+          "metadata": {
+            "syntheticDisclosure": "Fictional exercise observation; no actual Irish road event asserted.",
+            "roadSegmentVerified": false,
+            "duplicateOf": "RISK-DEMO-J-O03"
+          }
+        },
+        {
+          "observationId": "RISK-DEMO-J-O05",
+          "schemaVersion": "1.0.0",
+          "sourceId": "RISK-DEMO-J:flow_delta",
+          "sourceType": "synthetic_sensor",
+          "sourceGroup": "flow_delta",
+          "sourceProvider": "EcoTech fictional scenario generator",
+          "sourceRecordId": "RISK-DEMO-J:flow_delta:05",
+          "provenanceType": "synthetic_scenario_input",
+          "observationCategory": "traffic_flow_anomaly",
+          "measurementType": "minor_flow_variation",
+          "measurementValue": 0.1,
+          "measurementUnit": "index",
+          "observedAt": "2026-11-14T12:15:00Z",
+          "receivedAt": "2026-11-14T12:15:00Z",
+          "validFrom": "2026-11-14T12:15:00Z",
+          "validUntil": "2026-11-14T12:20:00Z",
+          "location": { "lat": 53.3562, "lon": -6.3881 },
+          "roadSegmentId": "SIM-M50-J7",
+          "roadDirection": "southbound",
+          "spatialCoverage": { "type": "provisional_demo_area", "areaId": "RISK-DEMO-J-AREA", "radiusMeters": 500, "verified": false },
+          "spatialUncertainty": { "method": "provisional", "radiusMeters": 500 },
+          "qualityStatus": "usable",
+          "qualityReasons": [],
+          "independenceGroup": "flow_delta",
+          "isSynthetic": true,
+          "scenarioId": "RISK-DEMO-J",
+          "metadata": { "syntheticDisclosure": "Minor fictional flow variation for information only; no actual traffic observation or hazard asserted.", "roadSegmentVerified": false }
+        }
+      ]
+    }
+  ]
+}

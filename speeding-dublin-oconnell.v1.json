@@ -1,0 +1,262 @@
+{
+  "contractVersion": "1.0.0",
+  "scenarioId": "speeding-dublin-oconnell-v1",
+  "scenarioVersion": "1.0.0",
+  "title": "Speeding concern: Dublin demonstration",
+  "referenceAt": "2026-11-07T12:00:00Z",
+  "scenarioNarrative": "A fictional speeding concern near a real Dublin street is presented for a public decision exercise. It is not an operational alert, an offence record, or a claim that speeding has been observed there.",
+  "publicDisclosure": "Real geography and national programme context are labelled separately from invented behavioural inputs and prototype outputs. No measured speed, local incident, effectiveness estimate, resource availability or official enforcement boundary is asserted.",
+  "location": {
+    "label": "O'Connell Street vicinity, Dublin city centre",
+    "city": "Dublin",
+    "country": "Ireland",
+    "boundaryStatus": "illustrative_demo_only",
+    "isOfficialGardaBoundary": false,
+    "boundaryExplanation": "The named street provides geographic context only. No polygon, patrol beat, camera zone, Garda area or road-authority jurisdiction is represented by this demo location.",
+    "geographyEvidenceId": "geo-oconnell"
+  },
+  "evidence": [
+    {
+      "id": "geo-oconnell",
+      "kind": "real_geography",
+      "title": "Dublin street context",
+      "statement": "Dublin City Council describes O'Connell Street as part of its Central Area. The scenario uses the street name only as a real geographic reference.",
+      "source": {
+        "name": "Dublin City Council, Central Area office page",
+        "url": "https://www.dublincity.ie/your-city-council/find-your-local-area-office/central-area-offices/sean-mcdermott-street-office-area-hq"
+      },
+      "date": "2026-11-07",
+      "dateBasis": "accessed",
+      "provenance": "Public council page consulted for geographic naming; publication date was not established.",
+      "synthetic": false,
+      "limitations": [
+        "The page does not establish a speeding problem, speed limit, collision history or intervention site.",
+        "The demo vicinity is not an official Garda boundary or enforcement zone."
+      ]
+    },
+    {
+      "id": "public-gosafe-context",
+      "kind": "public_observation",
+      "title": "National safety-camera context",
+      "statement": "An Garda Siochana describes a national safety-camera network and GoSafe as its outsourced service provider. This is programme context, not a location-specific observation.",
+      "source": {
+        "name": "An Garda Siochana, Safety Camera Network",
+        "url": "https://www.garda.ie/en/roads-policing/road-safety/safety-camera-network.html"
+      },
+      "date": "2026-11-07",
+      "dateBasis": "accessed",
+      "provenance": "Public Garda page consulted for the existence and governance context of the national programme; publication date was not established.",
+      "synthetic": false,
+      "locationSpecific": false,
+      "limitations": [
+        "This source does not say O'Connell Street is eligible for a camera or that GoSafe can deploy there.",
+        "No local observation, operational schedule, resource availability or effectiveness result is imported."
+      ]
+    },
+    {
+      "id": "synthetic-speeding-concern",
+      "kind": "synthetic_behavioural_input",
+      "title": "Fictional concern for discussion",
+      "statement": "For this exercise only, imagine that a review queue contains a qualitative concern that some vehicles appear to pass too quickly in the demonstration vicinity.",
+      "source": {
+        "name": "Scenario author, synthetic exercise prompt",
+        "url": null
+      },
+      "date": "2026-11-07",
+      "dateBasis": "authored",
+      "provenance": "Wholly invented behavioural input, not a complaint, sensor record, police observation or measured speed.",
+      "synthetic": true,
+      "limitations": [
+        "No vehicle-level data, measured speed, incident count or validated witness account exists in this fixture.",
+        "The concern cannot establish that speeding occurs at this location."
+      ]
+    },
+    {
+      "id": "prototype-review-output",
+      "kind": "prototype_risk_output",
+      "title": "Prototype review prompt",
+      "statement": "The demonstrator labels the fictional concern as needing human review before any proposal could be considered.",
+      "source": {
+        "name": "Scenario author, reviewed prototype rule",
+        "url": null
+      },
+      "date": "2026-11-07",
+      "dateBasis": "authored",
+      "provenance": "Non-calibrated prototype output based only on the synthetic concern; no live AI or risk model runs.",
+      "synthetic": true,
+      "limitations": [
+        "This is not a probability, severity score, enforcement recommendation or operational prioritisation.",
+        "No intervention effect is predicted or measured."
+      ]
+    }
+  ],
+  "responseOptions": [
+    {
+      "id": "visible_patrol",
+      "label": "Short visible patrol presence",
+      "purpose": "Explore a time-limited visible presence and opportunity for human observation, subject to Garda review.",
+      "supportingEvidenceIds": ["synthetic-speeding-concern", "prototype-review-output"],
+      "drawbacks": [
+        "Requires authorised personnel and may displace other duties; availability is unknown.",
+        "A short presence may change behaviour temporarily and does not establish sustained effect."
+      ],
+      "missingInformation": [
+        "Verified local speed observations and the applicable legal speed limit.",
+        "Operational authorisation, safe stopping arrangements and available resources."
+      ],
+      "evaluationRequirements": [
+        "Record an approved objective, duration and observation method before any real deployment.",
+        "Compare valid baseline and follow-up observations with context and displacement checks; report uncertainty."
+      ],
+      "authorityNote": "Simulation only; no patrol is requested or dispatched. Garda decision-making remains external to this demonstrator."
+    },
+    {
+      "id": "gosafe_proposal",
+      "label": "Propose a GoSafe deployment",
+      "purpose": "Illustrate a proposal for Garda consideration of a safety-camera option, not a deployment instruction.",
+      "supportingEvidenceIds": ["public-gosafe-context", "synthetic-speeding-concern"],
+      "drawbacks": [
+        "The national programme's existence does not establish site eligibility or practical siting.",
+        "Privacy, legal and operational checks would be required; camera availability is unknown."
+      ],
+      "missingInformation": [
+        "Garda-approved location eligibility and safe siting assessment.",
+        "Verified local speed and safety evidence, permissions and resource schedule."
+      ],
+      "evaluationRequirements": [
+        "Obtain programme-owner approval and documented lawful purpose before any real action.",
+        "Define authorised baseline/follow-up measures and account for changes in traffic exposure and displacement."
+      ],
+      "authorityNote": "Simulation only. The public visitor cannot book, direct or activate GoSafe."
+    },
+    {
+      "id": "roads_policing_proposal",
+      "label": "Propose a roads-policing deployment",
+      "purpose": "Compare a Garda-led roads-policing review option with other responses.",
+      "supportingEvidenceIds": ["synthetic-speeding-concern", "prototype-review-output"],
+      "drawbacks": [
+        "Personnel time and competing safety priorities are not known.",
+        "A simulated concern is insufficient for an enforcement decision."
+      ],
+      "missingInformation": [
+        "Validated local evidence, lawful operational basis and appropriate timing.",
+        "Availability, safety plan and decision-maker approval."
+      ],
+      "evaluationRequirements": [
+        "Document the authorised objective and observation protocol before any real operation.",
+        "Review observed outcomes and unintended effects without claiming a causal effect from this demo."
+      ],
+      "authorityNote": "Simulation only; no roads-policing tasking, offence processing or dispatch occurs."
+    },
+    {
+      "id": "engineering_assessment",
+      "label": "Request engineering assessment",
+      "purpose": "Explore whether a road-design, signing or speed-management assessment would be appropriate if the responsible authority agrees.",
+      "supportingEvidenceIds": ["geo-oconnell", "synthetic-speeding-concern"],
+      "drawbacks": [
+        "An assessment takes time and may find no engineering issue.",
+        "The demonstrator has not established the responsible road authority, road geometry or a causal problem."
+      ],
+      "missingInformation": [
+        "Responsible road authority and approved scope of assessment.",
+        "Verified traffic, speed, collision and street-design information where lawfully available."
+      ],
+      "evaluationRequirements": [
+        "Use a qualified authority-led review with documented baseline, design constraints and accessibility considerations.",
+        "If any measure is later trialled, predefine safety and exposure measures and follow-up timing."
+      ],
+      "authorityNote": "Simulation only; no roadworks or engineering request is sent. This street is not presented as a TII-owned route."
+    },
+    {
+      "id": "gather_evidence",
+      "label": "Gather more evidence / defer",
+      "purpose": "Avoid a premature intervention proposal while defining what trustworthy local evidence would be needed.",
+      "supportingEvidenceIds": ["synthetic-speeding-concern", "prototype-review-output"],
+      "drawbacks": [
+        "Deferral may delay a useful response if a real issue is later verified.",
+        "Data collection itself needs an approved purpose, method and privacy safeguards."
+      ],
+      "missingInformation": [
+        "Whether any independently verified local speeding or safety concern exists.",
+        "Who may lawfully collect and access any proposed observation data."
+      ],
+      "evaluationRequirements": [
+        "Specify a minimal, lawful data-collection plan and a review date before any real collection.",
+        "Set decision criteria for revisiting the options, including what would count as insufficient evidence."
+      ],
+      "authorityNote": "Simulation only; selecting defer creates no operational case or shared task."
+    }
+  ],
+  "visitorDecision": {
+    "choices": ["accept", "modify", "reject", "defer"],
+    "justificationRequired": true,
+    "modificationChoiceRequired": true,
+    "freeTextAllowed": false,
+    "justificationReasons": [
+      { "id": "proportionate_trial", "label": "A limited, reviewable trial seems proportionate" },
+      { "id": "evidence_gap", "label": "The evidence is too weak for a proposal" },
+      { "id": "authority_check", "label": "An authorised organisation must decide first" },
+      { "id": "evaluation_design", "label": "The evaluation plan needs improvement" },
+      { "id": "tradeoff_preference", "label": "The drawbacks outweigh the current case" }
+    ],
+    "modificationChoices": [
+      { "id": "narrow_scope", "label": "Narrow the proposed scope or duration" },
+      { "id": "evidence_gate", "label": "Require verified local evidence first" },
+      { "id": "authority_review", "label": "Add formal authority review before any real action" },
+      { "id": "evaluation_plan", "label": "Strengthen baseline and follow-up evaluation" }
+    ],
+    "meaning": "A visitor records a private simulated judgement using fixed reason and modification choices. No free-text or personal data is requested, and nothing is submitted to an agency or shared with another visitor."
+  },
+  "participation": [
+    {
+      "id": "garda",
+      "label": "Garda",
+      "evaluationRole": "Review whether the fictional decision workflow is understandable and what evidence and approvals a real policing decision would require.",
+      "potentialDataInputs": ["Authorised aggregated speed or enforcement context only if separately approved."],
+      "accessConditions": ["No operational data is assumed or requested by this demo.", "Any data access requires a separate agreement and lawful purpose."],
+      "nonCommitment": "This page is not Garda advice, a tasking system or an offer of operational participation."
+    },
+    {
+      "id": "tii",
+      "label": "TII",
+      "evaluationRole": "Comment on whether network-level evaluation questions and engineering trade-offs are framed responsibly.",
+      "potentialDataInputs": ["Approved aggregated road-network context if relevant to a future reviewed scenario."],
+      "accessConditions": ["First verify jurisdiction; this demo does not assign O'Connell Street to TII.", "No TII data feed is connected."],
+      "nonCommitment": "No TII endorsement, operational role or data entitlement is implied."
+    },
+    {
+      "id": "rsa",
+      "label": "RSA",
+      "evaluationRole": "Review clarity of public safety communication and the proposed evaluation questions.",
+      "potentialDataInputs": ["Public aggregate road-safety context only if cited and relevant."],
+      "accessConditions": ["No RSA data feed or privileged access is assumed.", "Any non-public data requires separate approval."],
+      "nonCommitment": "No RSA endorsement or validated risk estimate is implied."
+    },
+    {
+      "id": "insurance",
+      "label": "Insurance evaluator",
+      "evaluationRole": "Assess whether the explanation and uncertainty would be useful for a privacy-conscious evaluation discussion.",
+      "potentialDataInputs": ["Aggregated, privacy-reviewed context only under a separate agreement."],
+      "accessConditions": ["No policyholder, claims, pricing or identifiable driver data is collected or connected.", "No underwriting use is authorised."],
+      "nonCommitment": "The demonstrator makes no insurance eligibility, pricing or risk-scoring decision."
+    },
+    {
+      "id": "general_visitor",
+      "label": "General visitor",
+      "evaluationRole": "Explore the evidence labels, trade-offs and a private simulated decision.",
+      "potentialDataInputs": ["Only fixed, non-personal option, reason and modification choices for this visit."],
+      "accessConditions": ["No login, email, personal details, free-text field or shared upload is requested.", "The visitor's choice stays in memory in this browser tab."],
+      "nonCommitment": "A visitor choice does not contact an agency, dispatch a resource or create an offence record."
+    }
+  ],
+  "constraints": {
+    "noLogin": true,
+    "noBackendCredentials": true,
+    "noOperationalApi": true,
+    "noSharedWrites": true,
+    "noActualDispatch": true,
+    "noOffenceProcessing": true,
+    "noLiveAi": true,
+    "noVisitorPersonalData": true
+  }
+}

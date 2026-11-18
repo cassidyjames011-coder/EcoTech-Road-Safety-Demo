@@ -1,0 +1,56 @@
+{
+  "contractVersion": "1.0.0",
+  "referenceTimeUtc": "2026-11-07T12:00:00Z",
+  "clock": { "totalMinutes": 36, "defaultTickMs": 800, "minutesPerTick": 1, "signalFreshnessMinutes": 24 },
+  "provenance": "entirely_synthetic_replay",
+  "scenarios": {
+    "DEMO-SCEN-01": {
+      "metric": "illustrative_speed_variance",
+      "unit": "index points",
+      "events": [
+        { "minute": 0, "lag": 0, "group": "context", "kind": "baseline", "label": "Synthetic reference window begins", "value": 2, "signal": false, "quality": "usable", "offset": [0, 0] },
+        { "minute": 5, "lag": 1, "group": "fleet_aggregate", "kind": "speed_variance", "label": "Synthetic aggregate speed variance rises", "value": 8, "signal": true, "quality": "usable", "offset": [0.001, -0.001] },
+        { "minute": 8, "lag": 1, "group": "fleet_aggregate", "kind": "speed_variance", "label": "Repeated fleet aggregate report", "value": 8, "signal": true, "quality": "duplicate", "offset": [0.001, -0.001] },
+        { "minute": 3, "lag": 19, "group": "counter_simulated", "kind": "count_anomaly", "label": "Late counter-like aggregate arrives stale", "value": 7, "signal": true, "quality": "stale", "offset": [-0.001, 0.001] },
+        { "minute": 19, "lag": 1, "group": "counter_simulated", "kind": "count_anomaly", "label": "Independent synthetic count anomaly corroborates", "value": 11, "signal": true, "quality": "usable", "offset": [-0.001, 0.001] },
+        { "minute": 29, "lag": 1, "group": "fleet_aggregate", "kind": "speed_variance", "label": "Synthetic speed variance eases", "value": 5, "signal": false, "quality": "usable", "offset": [0.0005, -0.0005] }
+      ]
+    },
+    "DEMO-SCEN-02": {
+      "metric": "illustrative_conflict_index",
+      "unit": "index points",
+      "events": [
+        { "minute": 0, "lag": 0, "group": "context", "kind": "baseline", "label": "Synthetic merge-window baseline", "value": 1, "signal": false, "quality": "usable", "offset": [0, 0] },
+        { "minute": 4, "lag": 2, "group": "near_miss_reports", "kind": "conflict_report", "label": "Unverified synthetic near-miss report", "value": 6, "signal": true, "quality": "usable", "offset": [0.001, 0] },
+        { "minute": 7, "lag": 2, "group": "near_miss_reports", "kind": "conflict_report", "label": "Duplicate report of the same conflict", "value": 6, "signal": true, "quality": "duplicate", "offset": [0.001, 0] },
+        { "minute": 11, "lag": 2, "group": "fleet_aggregate", "kind": "harsh_braking", "label": "Fleet aggregate is degraded", "value": 8, "signal": true, "quality": "degraded", "offset": [-0.001, 0] },
+        { "minute": 18, "lag": 1, "group": "fleet_aggregate", "kind": "harsh_braking", "label": "Usable synthetic braking aggregate corroborates", "value": 10, "signal": true, "quality": "usable", "offset": [-0.001, 0] },
+        { "minute": 29, "lag": 1, "group": "near_miss_reports", "kind": "conflict_report", "label": "No additional synthetic conflict reported", "value": 3, "signal": false, "quality": "usable", "offset": [0, 0.001] }
+      ]
+    },
+    "DEMO-SCEN-03": {
+      "metric": "illustrative_delay_index",
+      "unit": "index points",
+      "events": [
+        { "minute": 0, "lag": 0, "group": "context", "kind": "baseline", "label": "Synthetic roadworks window begins", "value": 1, "signal": false, "quality": "usable", "offset": [0, 0] },
+        { "minute": 5, "lag": 1, "group": "works_simulated", "kind": "works_notice", "label": "Simulated works notice; activity unconfirmed", "value": 6, "signal": true, "quality": "usable", "offset": [0.001, 0] },
+        { "minute": 9, "lag": 1, "group": "works_simulated", "kind": "works_notice", "label": "Duplicate works notice", "value": 6, "signal": true, "quality": "duplicate", "offset": [0.001, 0] },
+        { "minute": 11, "lag": 3, "group": "journey_time_simulated", "kind": "delay", "label": "Journey-time aggregate missing coverage", "value": 8, "signal": true, "quality": "degraded", "offset": [-0.001, 0] },
+        { "minute": 18, "lag": 1, "group": "journey_time_simulated", "kind": "delay", "label": "Independent synthetic delay corroborates", "value": 10, "signal": true, "quality": "usable", "offset": [-0.001, 0] },
+        { "minute": 29, "lag": 1, "group": "journey_time_simulated", "kind": "delay", "label": "Synthetic delay begins to clear", "value": 4, "signal": false, "quality": "usable", "offset": [0, 0.001] }
+      ]
+    },
+    "DEMO-SCEN-04": {
+      "metric": "illustrative_vru_conflict_index",
+      "unit": "index points",
+      "events": [
+        { "minute": 0, "lag": 0, "group": "context", "kind": "baseline", "label": "Synthetic crossing-window baseline", "value": 1, "signal": false, "quality": "usable", "offset": [0, 0] },
+        { "minute": 5, "lag": 2, "group": "near_miss_reports", "kind": "vru_conflict", "label": "Unverified synthetic cyclist conflict report", "value": 6, "signal": true, "quality": "usable", "offset": [0.001, 0] },
+        { "minute": 9, "lag": 1, "group": "near_miss_reports", "kind": "vru_conflict", "label": "Duplicate of the same conflict", "value": 6, "signal": true, "quality": "duplicate", "offset": [0.001, 0] },
+        { "minute": 12, "lag": 3, "group": "crossing_count_simulated", "kind": "crossing_count", "label": "Crossing-count coverage degraded", "value": 8, "signal": true, "quality": "degraded", "offset": [-0.001, 0] },
+        { "minute": 19, "lag": 1, "group": "crossing_count_simulated", "kind": "crossing_count", "label": "Independent synthetic crossing count corroborates", "value": 10, "signal": true, "quality": "usable", "offset": [-0.001, 0] },
+        { "minute": 29, "lag": 1, "group": "near_miss_reports", "kind": "vru_conflict", "label": "Synthetic conflict sequence eases", "value": 4, "signal": false, "quality": "usable", "offset": [0, 0.001] }
+      ]
+    }
+  }
+}

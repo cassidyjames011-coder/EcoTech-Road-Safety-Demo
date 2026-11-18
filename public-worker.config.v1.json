@@ -1,0 +1,6 @@
+{
+  "contractVersion": "1.0.0",
+  "workerBaseUrl": null,
+  "status": "not_configured",
+  "note": "Set a reviewed HTTPS Worker origin only after isolated deployment approval. No credential belongs here."
+}

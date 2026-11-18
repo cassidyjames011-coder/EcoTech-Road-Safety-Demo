@@ -1,0 +1,1470 @@
+{
+  "contractVersion": "1.0.0",
+  "snapshotId": "dublin-public-context-2026-11-07-v1",
+  "retrievedAt": "2026-11-07T19:36:48+00:00",
+  "sources": {
+    "tii_sites": {
+      "url": "https://data.tii.ie/Datasets/TrafficCounters/tmu-traffic-counters.geojson",
+      "sha256": "41b7b016ce58234c8c6b1010a887a677c70f36bb11d2853837b17ca32b7820c9",
+      "httpStatus": 200
+    },
+    "tii_counts": {
+      "url": "https://data.tii.ie/Datasets/TrafficCountData/2020/06/01/per-site-class-aggr-2020-06-01.csv",
+      "sha256": "4ce1c76ece913c00113cc5f1b6e9fe3b392591140d8df5a6de23b8f7e0221b66",
+      "httpStatus": 200
+    },
+    "met_observations": {
+      "url": "https://opendata2.met.ie/edr/collections/observations-swob-nrt-60min/locations/0003?datetime=2026-11-06T00:00:00Z/2026-11-07T00:00:00Z",
+      "sha256": "6800b823e59e3c1789a290680759dd095d9c2ba858a83b640a4660f00b65a82e",
+      "httpStatus": 200
+    },
+    "met_parameters": {
+      "url": "https://opendata2.met.ie/edr/collections/observations-swob-nrt-60min/parameters",
+      "sha256": "b70bda8c5da160853e724eb3382d20c3f7a3bbdbe26cdc3a3d13183ddbd3b11c",
+      "httpStatus": 200
+    }
+  },
+  "records": {
+    "tiiDailyCounts": [
+      {
+        "id": "tii-2020-06-01-1503-daily-volume",
+        "originalSourceId": "1503",
+        "source": "TII public traffic counter daily class aggregate",
+        "adapterVersion": "1.0.0",
+        "metric": "daily_vehicle_count",
+        "value": 26897,
+        "unit": "vehicles/day",
+        "observationInterval": {
+          "date": "2020-06-01",
+          "timezone": "source-local-day-not-specified"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.34553,
+          "lon": -6.38715,
+          "description": "M50 Between Jn07 N04/M50 and Jn09 N07/M50 Red Cow, Palmerstown, Co. Dublin"
+        },
+        "coverage": "TII counter site, not the demonstration corridor",
+        "matchingMethod": "reference site selected by route/vicinity; no corridor equivalence asserted",
+        "provenance": "public_historical_aggregate",
+        "quality": {
+          "missing": false,
+          "freshness": "historical",
+          "metadataAge": "2016 site-location publication",
+          "classCount": 7
+        },
+        "licence": "CC BY 4.0; TII attribution required"
+      },
+      {
+        "id": "tii-2020-06-01-1508-daily-volume",
+        "originalSourceId": "1508",
+        "source": "TII public traffic counter daily class aggregate",
+        "adapterVersion": "1.0.0",
+        "metric": "daily_vehicle_count",
+        "value": 26224,
+        "unit": "vehicles/day",
+        "observationInterval": {
+          "date": "2020-06-01",
+          "timezone": "source-local-day-not-specified"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.37482,
+          "lon": -6.37144,
+          "description": "M50 Between Jn06 N03/M50 and Jn07 N04/M50, Castleknock, Co. Dublin"
+        },
+        "coverage": "TII counter site, not the demonstration corridor",
+        "matchingMethod": "reference site selected by route/vicinity; no corridor equivalence asserted",
+        "provenance": "public_historical_aggregate",
+        "quality": {
+          "missing": false,
+          "freshness": "historical",
+          "metadataAge": "2016 site-location publication",
+          "classCount": 8
+        },
+        "licence": "CC BY 4.0; TII attribution required"
+      },
+      {
+        "id": "tii-2020-06-01-20112-daily-volume",
+        "originalSourceId": "20112",
+        "source": "TII public traffic counter daily class aggregate",
+        "adapterVersion": "1.0.0",
+        "metric": "daily_vehicle_count",
+        "value": 10356,
+        "unit": "vehicles/day",
+        "observationInterval": {
+          "date": "2020-06-01",
+          "timezone": "source-local-day-not-specified"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.15905,
+          "lon": -6.12795,
+          "description": "N11 Between Kilmacanogue and Delgany Jn, Co. Wicklow"
+        },
+        "coverage": "TII counter site, not the demonstration corridor",
+        "matchingMethod": "reference site selected by route/vicinity; no corridor equivalence asserted",
+        "provenance": "public_historical_aggregate",
+        "quality": {
+          "missing": false,
+          "freshness": "historical",
+          "metadataAge": "2016 site-location publication",
+          "classCount": 7
+        },
+        "licence": "CC BY 4.0; TII attribution required"
+      }
+    ],
+    "metHourlyObservations": [
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T00",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T00:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.43,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T00:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T00",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T00:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T00:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T01",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T01:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.21,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T01:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T01",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T01:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T01:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T02",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T02:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.23,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T02:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T02",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T02:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T02:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T03",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T03:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.08,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T03:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T03",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T03:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T03:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T04",
+        "originalSourceId": "station-0003:60_Suit_B_DryB:2026-11-06T04:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.05,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T04:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T04",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T04:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T04:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T05",
+        "originalSourceId": "station-0003:60_Suit_B_DryB:2026-11-06T05:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.02,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T05:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T05",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T05:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T05:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T06",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T06:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 7.987,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T06:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T06",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T06:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T06:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T07",
+        "originalSourceId": "station-0003:60_Suit_B_DryB:2026-11-06T07:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 7.952,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T07:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T07",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T07:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T07:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T08",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T08:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 7.858,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T08:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T08",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T08:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T08:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T09",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T09:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.26,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T09:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T09",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T09:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T09:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T10",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T10:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 9.56,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T10:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T10",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T10:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T10:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T11",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T11:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 10.1,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T11:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T11",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T11:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T11:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T12",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T12:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 10.44,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T12:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T12",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T12:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T12:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T13",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T13:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 10.69,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T13:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T13",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T13:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T13:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T14",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T14:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 10.56,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T14:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T14",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T14:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T14:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T15",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T15:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 10.41,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T15:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T15",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T15:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T15:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T16",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T16:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 9.9,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T16:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T16",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T16:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T16:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T17",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T17:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 9.25,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T17:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T17",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T17:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T17:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T18",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T18:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.79,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T18:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T18",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T18:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T18:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T19",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T19:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.62,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T19:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T19",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T19:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T19:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T20",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T20:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.65,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T20:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T20",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T20:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T20:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T21",
+        "originalSourceId": "station-0003:60_Suit_B_DryB:2026-11-06T21:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.61,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T21:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T21",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T21:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T21:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T22",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T22:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.32,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T22:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T22",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T22:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T22:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-06T23",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-06T23:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.15,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T23:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-06T23",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-06T23:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-06T23:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-air_temperature-2026-11-07T00",
+        "originalSourceId": "station-0003:60_Suit_A_DryA:2026-11-07T00:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "air_temperature",
+        "value": 8.0,
+        "unit": "°C",
+        "observationInterval": {
+          "instantUtc": "2026-11-07T00:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      },
+      {
+        "id": "met-phoenix-park-precipitation_amount-2026-11-07T00",
+        "originalSourceId": "station-0003:60_Suit_A_HourRainA:2026-11-07T00:00:00+00:00",
+        "source": "Met Éireann EDR 60-minute station observation",
+        "adapterVersion": "1.0.0",
+        "metric": "precipitation_amount",
+        "value": 0.0,
+        "unit": "mm",
+        "observationInterval": {
+          "instantUtc": "2026-11-07T00:00:00+00:00"
+        },
+        "retrievedAt": "2026-11-07T19:36:48+00:00",
+        "location": {
+          "lat": 53.363611,
+          "lon": -6.349722,
+          "description": "Phoenix Park station, Dublin"
+        },
+        "coverage": "station air/rain measurement; not road-surface or scenario-time conditions",
+        "matchingMethod": "Dublin regional context only; no corridor-level match",
+        "provenance": "public_historical_station_observation",
+        "quality": {
+          "missing": false,
+          "freshness": "dated_snapshot",
+          "station": "Phoenix Park"
+        },
+        "licence": "CC BY 4.0; Met Éireann attribution required"
+      }
+    ]
+  }
+}
